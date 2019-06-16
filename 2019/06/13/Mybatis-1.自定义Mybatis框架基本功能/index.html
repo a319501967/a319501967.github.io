@@ -96,16 +96,18 @@
 
 
 
-  <meta name="description" content="东北电力大学 信息与计算科学16级">
-<meta property="og:type" content="website">
-<meta property="og:title" content="代码呱唧唧">
-<meta property="og:url" content="http://yoursite.com/page/4/index.html">
+  <meta name="description" content="Mybatis框架的基本使用流程">
+<meta name="keywords" content="框架基础,Mybatis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis 1.自定义Mybatis框架基本功能">
+<meta property="og:url" content="http://yoursite.com/2019/06/13/Mybatis-1.自定义Mybatis框架基本功能/index.html">
 <meta property="og:site_name" content="代码呱唧唧">
-<meta property="og:description" content="东北电力大学 信息与计算科学16级">
+<meta property="og:description" content="Mybatis框架的基本使用流程">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-15T08:00:08.759Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="代码呱唧唧">
-<meta name="twitter:description" content="东北电力大学 信息与计算科学16级">
+<meta name="twitter:title" content="Mybatis 1.自定义Mybatis框架基本功能">
+<meta name="twitter:description" content="Mybatis框架的基本使用流程">
 
 
 
@@ -113,7 +115,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/page/4/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/13/Mybatis-1.自定义Mybatis框架基本功能/">
 
 
 
@@ -123,7 +125,7 @@
   };
 </script>
 
-  <title>代码呱唧唧</title>
+  <title>Mybatis 1.自定义Mybatis框架基本功能 | 代码呱唧唧</title>
   
 
 
@@ -171,8 +173,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-  page-home">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -356,9 +357,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -373,7 +374,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/04/Mybatis-4.Mybatis中连接池以及事务控制，多表操作/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/13/Mybatis-1.自定义Mybatis框架基本功能/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="代码呱唧唧">
@@ -390,10 +391,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/04/Mybatis-4.Mybatis中连接池以及事务控制，多表操作/" class="post-title-link" itemprop="url">Mybatis 4.Mybatis中连接池以及事务控制，多表操作</a>
+          <h1 class="post-title" itemprop="name headline">Mybatis 1.自定义Mybatis框架基本功能
+
               
             
           </h1>
@@ -418,7 +417,7 @@
                 
               
 
-              <time title="创建时间：2019-05-04 14:13:42" itemprop="dateCreated datePublished" datetime="2019-05-04T14:13:42+08:00">2019-05-04</time>
+              <time title="创建时间：2019-06-13 21:03:39" itemprop="dateCreated datePublished" datetime="2019-06-13T21:03:39+08:00">2019-06-13</time>
             
 
             
@@ -435,7 +434,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-15 16:00:18" itemprop="dateModified" datetime="2019-06-15T16:00:18+08:00">2019-06-15</time>
+                <time title="修改时间：2019-06-15 16:00:08" itemprop="dateModified" datetime="2019-06-15T16:00:08+08:00">2019-06-15</time>
               
             
           </span>
@@ -471,8 +470,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/04/Mybatis-4.Mybatis中连接池以及事务控制，多表操作/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/04/Mybatis-4.Mybatis中连接池以及事务控制，多表操作/" itemprop="commentCount"></span>
+                <a href="/2019/06/13/Mybatis-1.自定义Mybatis框架基本功能/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/13/Mybatis-1.自定义Mybatis框架基本功能/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -500,23 +499,17 @@
       
 
       
-        
-          
-            <p>
-              SQL语句中如果出现同名字段 在配置文件中 通过起别名处理 防止匹配不正确容器是一个集合 线程安全 所以添加同步
-Mybatis连接池的三种配置Mybatis连接池提供了3种方式的配置      配置位置：主配置文件SqlMapConfig.xml中的DataSource标签 type表示的就是采用
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/05/04/Mybatis-4.Mybatis中连接池以及事务控制，多表操作/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+        <h2 id="Mybatis框架的基本使用流程"><a href="#Mybatis框架的基本使用流程" class="headerlink" title="Mybatis框架的基本使用流程"></a>Mybatis框架的基本使用流程</h2><a id="more"></a>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//        1.创建连接获取配置文件</span></span><br><span class="line">        InputStream in= Resources.getResourceAsStream(<span class="string">"sqlMapConfig.xml"</span>);</span><br><span class="line"><span class="comment">//        2.创建SqlSessionFactory工厂</span></span><br><span class="line">        SqlSessionFactoryBuilder builder = <span class="keyword">new</span> SqlSessionFactoryBuilder();</span><br><span class="line">        SqlSessionFactory sessionFactory=builder.build(in);</span><br><span class="line"><span class="comment">//        3.使用工厂生产SqlSession对象</span></span><br><span class="line">        SqlSession session = sessionFactory.openSession();</span><br><span class="line"><span class="comment">//        4.使用对象创建Dao接口的代理对象</span></span><br><span class="line">        UserDao dao = session.getMapper(UserDao.class);</span><br><span class="line"><span class="comment">//        5.使用代理对象执行方法</span></span><br><span class="line">        List&lt;User&gt; users = dao.findAll();</span><br><span class="line">        <span class="keyword">for</span> (User user : users) &#123;</span><br><span class="line">            System.out.println(user);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//        6.关闭资源</span></span><br><span class="line">        session.close();</span><br><span class="line">        in.close();</span><br></pre></td></tr></table></figure>
+
+<p>其中<br>  创建SqlSessionFactory对象为创造者模式<br>  创建 SqlSession对象为工厂模式<br>  创建UserDao为代理模式</p>
+<ul>
+<li><p>自定义Mybatis准备</p>
+<p> public class Resources<br> public class SqlSessionFactoryBuilder<br> public interface SqlSessionFactory<br> public interface SqlSession</p>
+</li>
+</ul>
+
       
     </div>
 
@@ -537,398 +530,42 @@ Mybatis连接池的三种配置Mybatis连接池提供了3种方式的配置     
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/03/Mybatis-3.实现Dao层开发/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="代码呱唧唧">
-      <meta itemprop="description" content="东北电力大学 信息与计算科学16级">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="代码呱唧唧">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/03/Mybatis-3.实现Dao层开发/" class="post-title-link" itemprop="url">Mybatis 3.实现Dao层开发</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-05-03 17:16:23" itemprop="dateCreated datePublished" datetime="2019-05-03T17:16:23+08:00">2019-05-03</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-08 15:17:50" itemprop="dateModified" datetime="2019-05-08T15:17:50+08:00">2019-05-08</time>
-              
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Mybatis/" itemprop="url" rel="index"><span itemprop="name">Mybatis</span></a></span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/框架基础/" rel="tag"><i class="fa fa-tag"></i> 框架基础</a>
           
-
+            <a href="/tags/Mybatis/" rel="tag"><i class="fa fa-tag"></i> Mybatis</a>
           
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/03/Mybatis-3.实现Dao层开发/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/03/Mybatis-3.实现Dao层开发/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          
-            <p>
-              源码流程分析
-insert delete update三个方法在DefaultSession中 最后都调用的是update方法，所以在session方法中可以使用update实现CUD操作
-使用动态代理会先创建代理实例，根据方法和sql语句判断执行哪一种方法 sqlSession.insert de
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/05/03/Mybatis-3.实现Dao层开发/#more" rel="contents">
-                阅读全文 &raquo;
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/07/Hexo/" rel="next" title="Hexo 本地博客转移">
+                <i class="fa fa-chevron-left"></i> Hexo 本地博客转移
               </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/03/Hexo设置/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="代码呱唧唧">
-      <meta itemprop="description" content="东北电力大学 信息与计算科学16级">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="代码呱唧唧">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/05/03/Hexo设置/" class="post-title-link" itemprop="url">Hexo设置</a>
-              
             
-          </h1>
-        
+          </div>
 
-        <div class="post-meta">
-          <span class="post-time">
+          <span class="post-nav-divider"></span>
 
+          <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/06/13/Mybatis-2.Mybatis-CRUD操作/" rel="prev" title="Mybatis 2.Mybatis CRUD操作">
+                Mybatis 2.Mybatis CRUD操作 <i class="fa fa-chevron-right"></i>
+              </a>
             
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-05-03 13:17:36 / 修改时间：13:31:22" itemprop="dateCreated datePublished" datetime="2019-05-03T13:17:36+08:00">2019-05-03</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/03/Hexo设置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/03/Hexo设置/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>
-               首先 学会Hexo下的MarkDown的语法    因为MarkDown下的语法和Hexo框架下支持的语法有所差别，所以对Hexo进行相关语言的了解
-
-语法：  https://www.jianshu.com/p/5e9af02c36b3更改默认头信息位于该目录D:\java\blog\scaff
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/05/03/Hexo设置/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -938,18 +575,19 @@ insert delete update三个方法在DefaultSession中 最后都调用的是update
   </article>
 
 
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-  </nav>
-
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -969,8 +607,17 @@ insert delete update三个方法在DefaultSession中 最后都调用的是update
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1146,6 +793,23 @@ insert delete update三个方法在DefaultSession中 最后都调用的是update
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mybatis框架的基本使用流程"><span class="nav-number">1.</span> <span class="nav-text">Mybatis框架的基本使用流程</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -1276,6 +940,10 @@ insert delete update三个方法在DefaultSession中 最后都调用的是update
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
 
   
 
@@ -1321,6 +989,8 @@ insert delete update三个方法在DefaultSession中 最后都调用的是update
 
 
 
+
+  
 
 
   
