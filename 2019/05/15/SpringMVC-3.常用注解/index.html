@@ -96,13 +96,13 @@
 
 
 
-  <meta name="description" content="Model接口 是将键值对存入request域中取值调用其实现类modelMap 常用注解RequestParam把请求中指定名称的参数给控制器中的形参赋值。作用于参数上value：请求参数中的名称。required：请求参数中是否必须提供此参数。默认值：true。表示必须提供，如果不提供将报错。例： 如果不用该注解修饰 对应不上则打印null结果： 1&amp;lt;a href=&quot;test/test">
+  <meta name="description" content="Model接口 是将键值对存入request域中取值调用其实现类modelMap 常用注解RequestParam把请求中指定名称的参数给控制器中的形参赋值。作用于参数上value：请求参数中的名称。required：请求参数中是否必须提供此参数。默认值：true。表示必须提供，如果不提供将报错。defaultValue：默认值 如果没有提供 则自定传入默认值@RequestParam(name">
 <meta name="keywords" content="框架基础,SpringMVC">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringMVC 3.常用注解">
 <meta property="og:url" content="http://yoursite.com/2019/05/15/SpringMVC-3.常用注解/index.html">
 <meta property="og:site_name" content="代码呱唧唧">
-<meta property="og:description" content="Model接口 是将键值对存入request域中取值调用其实现类modelMap 常用注解RequestParam把请求中指定名称的参数给控制器中的形参赋值。作用于参数上value：请求参数中的名称。required：请求参数中是否必须提供此参数。默认值：true。表示必须提供，如果不提供将报错。例： 如果不用该注解修饰 对应不上则打印null结果： 1&amp;lt;a href=&quot;test/test">
+<meta property="og:description" content="Model接口 是将键值对存入request域中取值调用其实现类modelMap 常用注解RequestParam把请求中指定名称的参数给控制器中的形参赋值。作用于参数上value：请求参数中的名称。required：请求参数中是否必须提供此参数。默认值：true。表示必须提供，如果不提供将报错。defaultValue：默认值 如果没有提供 则自定传入默认值@RequestParam(name">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/05/18/5cdfbe1560a4630834.png">
 <meta property="og:image" content="https://i.loli.net/2019/05/18/5cdfbef5dfc2f72516.png">
@@ -112,10 +112,10 @@
 <meta property="og:image" content="https://i.loli.net/2019/05/17/5cde74d1bc7c888784.png">
 <meta property="og:image" content="https://i.loli.net/2019/05/18/5cdfba5723ed368887.png">
 <meta property="og:image" content="https://i.loli.net/2019/05/18/5cdfba572bd2a49116.png">
-<meta property="og:updated_time" content="2019-05-18T08:43:28.000Z">
+<meta property="og:updated_time" content="2019-06-20T08:42:47.511Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringMVC 3.常用注解">
-<meta name="twitter:description" content="Model接口 是将键值对存入request域中取值调用其实现类modelMap 常用注解RequestParam把请求中指定名称的参数给控制器中的形参赋值。作用于参数上value：请求参数中的名称。required：请求参数中是否必须提供此参数。默认值：true。表示必须提供，如果不提供将报错。例： 如果不用该注解修饰 对应不上则打印null结果： 1&amp;lt;a href=&quot;test/test">
+<meta name="twitter:description" content="Model接口 是将键值对存入request域中取值调用其实现类modelMap 常用注解RequestParam把请求中指定名称的参数给控制器中的形参赋值。作用于参数上value：请求参数中的名称。required：请求参数中是否必须提供此参数。默认值：true。表示必须提供，如果不提供将报错。defaultValue：默认值 如果没有提供 则自定传入默认值@RequestParam(name">
 <meta name="twitter:image" content="https://i.loli.net/2019/05/18/5cdfbe1560a4630834.png">
 
 
@@ -443,7 +443,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-18 16:43:28" itemprop="dateModified" datetime="2019-05-18T16:43:28+08:00">2019-05-18</time>
+                <time title="修改时间：2019-06-20 16:42:47" itemprop="dateModified" datetime="2019-06-20T16:42:47+08:00">2019-06-20</time>
               
             
           </span>
@@ -509,7 +509,7 @@
 
       
         <p> Model接口 是将键值对存入request域中<br>取值调用其实现类modelMap</p>
-<h2 id="常用注解"><a href="#常用注解" class="headerlink" title="常用注解"></a>常用注解</h2><h3 id="RequestParam"><a href="#RequestParam" class="headerlink" title="RequestParam"></a>RequestParam</h3><p>把请求中指定名称的参数给控制器中的形参赋值。<br>作用于参数上<br>value：请求参数中的名称。<br>required：请求参数中是否必须提供此参数。默认值：true。表示必须提供，如果不提供将报错。<br>例： 如果不用该注解修饰 对应不上则打印<code>null</code><br>结果：<img src="https://i.loli.net/2019/05/18/5cdfbe1560a4630834.png" alt></p>
+<h2 id="常用注解"><a href="#常用注解" class="headerlink" title="常用注解"></a>常用注解</h2><h3 id="RequestParam"><a href="#RequestParam" class="headerlink" title="RequestParam"></a>RequestParam</h3><p>把请求中指定名称的参数给控制器中的形参赋值。<br>作用于参数上<br>value：请求参数中的名称。<br>required：请求参数中是否必须提供此参数。默认值：true。表示必须提供，如果不提供将报错。<br>defaultValue：默认值 如果没有提供 则自定传入默认值<br><code>@RequestParam(name = &quot;page&quot;, required = true, defaultValue = &quot;1&quot;)</code><br>例： 如果不用该注解修饰 对应不上则打印<code>null</code><br>结果：<img src="https://i.loli.net/2019/05/18/5cdfbe1560a4630834.png" alt></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"test/testRequestParam?username=于松江"</span>&gt;</span>testRequestParam<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/testRequestParam"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">testRequestParam</span><span class="params">(@RequestParam(value = <span class="string">"username"</span>)</span> String userName)</span>&#123;</span><br><span class="line">        System.out.println(userName);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"success"</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>

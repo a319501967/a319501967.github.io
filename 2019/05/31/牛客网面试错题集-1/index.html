@@ -107,7 +107,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/06/02/5cf33cc97c0a529140.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/03/5cf4934e79da522816.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/03/5cf49606135fd89683.png">
-<meta property="og:updated_time" content="2019-06-18T01:35:45.066Z">
+<meta property="og:updated_time" content="2019-06-22T11:53:12.573Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="牛客网面试错题集 1">
 <meta name="twitter:description" content="面向对象的五大基本原则（抽象类原则不是） 单一职责原则（SRP） 开放封闭原则（OCP）  里氏替换原则（LSP） 依赖倒置原则（DIP）  接口隔离原则（ISP）  Java语言特性Java致力于检查程序在编译和运行时的错误。Java虚拟机实现了跨平台接口类型检查帮助检查出许多开发早期出现的错误。Java自己操纵内存减少了内存出错的可能性。Java还实现了真数组，避免了覆盖数据的可能。 程序设计">
@@ -438,7 +438,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-18 09:35:45" itemprop="dateModified" datetime="2019-06-18T09:35:45+08:00">2019-06-18</time>
+                <time title="修改时间：2019-06-22 19:53:12" itemprop="dateModified" datetime="2019-06-22T19:53:12+08:00">2019-06-22</time>
               
             
           </span>
@@ -514,6 +514,7 @@
 <p>程序设计语言中，数组元素在内存中是一个接着一个线性存放的，通过第一个元素就能访问随后的元素，这样的数组称之为“真数组”。<br>实现了真数组为Java语言健壮性的特点之一。</p>
 <h3 id="程序运行顺序"><a href="#程序运行顺序" class="headerlink" title="程序运行顺序"></a>程序运行顺序</h3><p>静态优先 父类优先</p>
 <p> 类的初始化顺序是：<br> 1、初始化父类中的静态成员变量和静态代码块。<br> 2、初始化子类中的静态成员变量和静态代码块。<br> 3、初始化父类中的普通成员变量和代码块，再执行父类中的构造方法。<br> 4、初始化子类中的普通成员变量和代码块，在执行子类中的构造方法。</p>
+<p> 静态方法也算静态代码块<br> 如果两个相同等级<br> 则按顺序执行</p>
 <h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><p>基本要点 构造函数私有 唯一实例<br>*<em>静态工厂方法每次产出一个新的实例 *</em></p>
 <h3 id="volatile关键字"><a href="#volatile关键字" class="headerlink" title="volatile关键字"></a>volatile关键字</h3><ul>
 <li>具有可见性 </li>
@@ -549,8 +550,14 @@
 <p>errorPage的实质就是JSP的异常处理机制,发生异常时才会跳转到 errorPage指定的页面，没必要给errorPage再设置一个errorPage。所以当errorPage属性存在时， isErrorPage属性值为false<br>为了使用exception对象 所以将  isErrorPage属性值为true</p>
 <h3 id="数组复制"><a href="#数组复制" class="headerlink" title="数组复制"></a>数组复制</h3><p>可以看到是native方法：native关键字说明其修饰的方法是一个原生态方法，方法对应的实现不是在当前文件，而是在用其他语言（如C和C++）实现的文件中。 可以将native方法比作Java程序同Ｃ程序的接口。</p>
 <p>copyOf不是System的方法，而是Arrays的方法，可以看到本质上是调用的arraycopy方法。</p>
-<h3 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h3><p>重载函数必须有不同的形参列表<br>即要么 参数个数相同 类型不同<br>要么 参数个数不同 类型相同</p>
-<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><p>一个以”.java”为后缀的源文件<br>只能有一个与文件名相同的类，可以包含其他类</p>
+<h3 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h3><p>方法重载是指在一个类中定义多个同名的方法，但要求每个方法具有不同的参数的类型或参数的个数。<br>原则如下：</p>
+<ol>
+<li>方法名一定要相同。</li>
+<li>方法的参数表<strong>必须不同</strong>，包括参数的类型或个数，以此区分不同的方法体。</li>
+<li>如果参数个数不同，就不管它的参数类型了！</li>
+<li>如果参数个数相同，那么参数的类型或者<strong>参数的顺序</strong>必须不同。</li>
+<li>方法的返回类型、修饰符可以相同，也可不同。<h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3>一个以”.java”为后缀的源文件<br>只能有一个与文件名相同的类，可以包含其他类</li>
+</ol>
 <p>当编写一个java源代码文件时，此文件通常被称为编译单元（有时也被称为转译单元）。每个编译单元都必须有一个后缀名.java，而在编译单元内则可以有一个public类，该类的名称必须与文件的名称相同（包括大小写，但不包括文件的后缀名.java）。<strong>每个编译单元只能有一个public类，否则编译器就不会接受。</strong>如果在该编译单元之中<strong>还有额外的类</strong>的话，那么在包之外的世界是<strong>无法看见这些类</strong>的，这是因为它们不是public类，而且它们主要用来为主public类提供支持。            –《Java 编程思想》<br><strong>.class</strong>文件 生成多个  为内部类 </p>
 <h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><ul>
 <li>HashMap实际上是一个<strong>链表散列</strong>的数据结构，即数组和链表的结合体。HashMap的底层结构是一个数组，数组中的每一项是一条链表。<br><img src="https://i.loli.net/2019/06/02/5cf33cc97c0a529140.png" alt></li>
@@ -587,6 +594,7 @@
 </ul>
 <h3 id="基础数据类型"><a href="#基础数据类型" class="headerlink" title="基础数据类型"></a>基础数据类型</h3><p><img src="https://i.loli.net/2019/06/03/5cf49606135fd89683.png" alt></p>
 <p>1 2 正常定义需要加l和f，但是long和float属于基本类型，会进行转化，所以不会报出异常。 <strong>float 如果是小数时需要添加f 不会自动转化</strong><br>3 boolean类型不能和任何类型进行转换，会报出类型异常错误<br>4 选项中，byte的取值范围是-128—127。报出异常</p>
+<p>基本数据类型 instanceof 对象类型 会编译不通过<br>不会进行自动装箱</p>
 <h3 id="Iterator"><a href="#Iterator" class="headerlink" title="Iterator"></a>Iterator</h3><p>支持从源集合中安全地删除对象，只需在** Iterator 上调用 remove()** 即可。这样做的好处是可以避免 ConcurrentModifiedException ，当打开 Iterator 迭代集合时，同时又在对集合进行修改。<br>有些集合不允许在迭代时删除或添加元素，但是调用 Iterator 的remove() 方法是个安全的做法。 </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;list.size();i++)&#123;</span><br><span class="line">    list.remove(...);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -623,8 +631,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/30/SSM-3.管理系统项目/" rel="next" title="SSM 3.管理系统项目">
-                <i class="fa fa-chevron-left"></i> SSM 3.管理系统项目
+              <a href="/2019/05/30/SSM-3.管理系统项目/" rel="next" title="SSM 3.管理系统项目知识点">
+                <i class="fa fa-chevron-left"></i> SSM 3.管理系统项目知识点
               </a>
             
           </div>
