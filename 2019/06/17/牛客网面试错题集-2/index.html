@@ -106,7 +106,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/06/18/5d083dc52750b10637.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/25/5d118cbb9907820078.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/25/5d118deb84dc678623.png">
-<meta property="og:updated_time" content="2019-06-25T03:27:31.450Z">
+<meta property="og:updated_time" content="2019-06-25T08:12:24.359Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="牛客网面试错题集 2">
 <meta name="twitter:description" content="Java编译java MyTest a b cjava后跟类名 后跟arg[ ]数组参数 包 包是类的容器，用于分隔类名空间。java是跨平台的，所以java中的包和操作系统没有任何关系，java的包是用来组织文件的一种虚拟文件系统。 定义在同一个包（package）内的类可以不经过import而直接相互使用。面向对象三大特性继承封装多态java c++所有使用面向对象思想的语言通用数据库执行语句">
@@ -437,7 +437,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-25 11:27:31" itemprop="dateModified" datetime="2019-06-25T11:27:31+08:00">2019-06-25</time>
+                <time title="修改时间：2019-06-25 16:12:24" itemprop="dateModified" datetime="2019-06-25T16:12:24+08:00">2019-06-25</time>
               
             
           </span>
@@ -558,7 +558,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Base"</span>);</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Base</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Son"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodB</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"SonB"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test01</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Base base = <span class="keyword">new</span> Son();</span><br><span class="line">        base.method();</span><br><span class="line">        base.methodB();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>编译期无法通过 因为编译期认为 <code>Base base = new Son();</code>是base对象 base中没有<code>methodB();</code>方法，所以编译期无法通过</p>
-<p>成员变量和静态方法：编译期和运行期都看左面 即父类或者父类接口<br>方法：编译器看左面运行期看右面</p>
+<p>成员变量和静态方法：编译期和运行期都看左面 即父类或者父类接口<br>方法：编译器看左面运行期看右面<br>调用子类特有的方法(父类没有 子类有的) 不能使用多态</p>
 <h2 id="ASCII码"><a href="#ASCII码" class="headerlink" title="ASCII码"></a>ASCII码</h2><p>空格的ASCII码值为32<br>0–48 A–65 a–97</p>
 <h2 id="修饰符访问权限"><a href="#修饰符访问权限" class="headerlink" title="修饰符访问权限"></a>修饰符访问权限</h2><p><img src="https://i.loli.net/2019/06/25/5d118cbb9907820078.png" alt></p>
 <h2 id="Sevlet-体系结构"><a href="#Sevlet-体系结构" class="headerlink" title="Sevlet 体系结构"></a>Sevlet 体系结构</h2><p><img src="https://i.loli.net/2019/06/25/5d118deb84dc678623.png" alt></p>
@@ -679,7 +679,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-count">38</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>

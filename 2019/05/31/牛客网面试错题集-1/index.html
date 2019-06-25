@@ -108,7 +108,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/06/02/5cf33cc97c0a529140.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/03/5cf4934e79da522816.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/03/5cf49606135fd89683.png">
-<meta property="og:updated_time" content="2019-06-25T08:05:54.999Z">
+<meta property="og:updated_time" content="2019-06-25T08:14:54.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="牛客网面试错题集 1">
 <meta name="twitter:description" content="面向对象的五大基本原则（抽象类原则不是） 单一职责原则（SRP） 开放封闭原则（OCP）  里氏替换原则（LSP） 依赖倒置原则（DIP）  接口隔离原则（ISP）  Java语言特性Java致力于检查程序在编译和运行时的错误。Java虚拟机实现了跨平台接口类型检查帮助检查出许多开发早期出现的错误。Java自己操纵内存减少了内存出错的可能性。Java还实现了真数组，避免了覆盖数据的可能。 程序设计">
@@ -439,7 +439,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-25 16:05:54" itemprop="dateModified" datetime="2019-06-25T16:05:54+08:00">2019-06-25</time>
+                <time title="修改时间：2019-06-25 16:14:54" itemprop="dateModified" datetime="2019-06-25T16:14:54+08:00">2019-06-25</time>
               
             
           </span>
@@ -574,7 +574,7 @@
 <h4 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h4><p>特点:<br>1.抽象类中可以构造方法<br>2.抽象类中可以存在普通属性，方法，静态属性和方法。<br>3.抽象类中可以存在抽象方法。<br>4.如果一个类中有一个抽象方法，那么当前类一定是抽象类；抽象类中不一定有抽象方法。<br>5.抽象类中的抽象方法，需要有子类实现，如果子类不实现，则子类也需要定义为抽象的。<br>6.没有抽象方法的抽象类也不可以实例化 使用此特性创建工具类防止实例化</p>
 <h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><p>1.在接口中只有方法的声明，没有方法体。<br>2.在接口中只有常量，因为定义的变量，在编译的时候都会默认加上<br>public static final<br>3.在接口中的方法，永远都被public来修饰。<br>4.接口中没有构造方法，也不能实例化接口的对象。<br>5.接口可以实现多继承<br>6.接口中定义的方法都需要有实现类来实现，如果实现类不能实现接口中的所有方法<br>7.则实现类定义为抽象类。</p>
 <p><strong>关于抽象类<br>JDK 1.8以前，抽象类的方法默认访问权限为protected<br>JDK 1.8时，抽象类的方法默认访问权限变为default</strong></p>
-<p>*<em>关于接口<br>JDK 1.8以前，接口中的方法必须是public的<br>JDK 1.8时，接口中的方法可以是public的，也可以是default修饰的默认方法 static修饰的静态方法<br>JDK 1.9时，接口中的方法可以是private的 *</em></p>
+<p>*<em>关于接口<br>JDK 1.8以前，接口中的方法必须是public的<br>JDK 1.8时，接口中的方法可以是public的，也可以是default修饰的默认方法（如果实现类想要覆盖访问修饰符为public） static修饰的静态方法<br>JDK 1.9时，接口中的方法可以是private的 *</em></p>
 <p>声明的变量为 public static final 为全局常量<br>其实现类可以调用<br>** 接口中所有方法都是抽象方法 但抽象类中可以包含非抽象方法 **
 接口是特殊的抽象类<br>为什么<strong>只能用public 修饰</strong> （其前的abstract可以省略）<br>因为接口可以被所有类实现 private不行<br>既然被所有类实现 protected也不行<br>static 修饰没有意义 因为变量是全局变量 方法没实现类</p>
 <p>抽象类中的抽象方法（其前有abstract修饰）不能用private、static、synchronized、native、final访问修饰符修饰<br>原因：</p>
@@ -723,7 +723,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">37</span>
+                    <span class="site-state-item-count">38</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
