@@ -107,7 +107,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/05/06/5ccfdb33d23b4.png">
 <meta property="og:image" content="https://i.loli.net/2019/05/06/5ccfdc21a07cb.png">
 <meta property="og:image" content="https://i.loli.net/2019/05/06/5ccfdb61abfc4.png">
-<meta property="og:updated_time" content="2019-05-06T07:03:08.000Z">
+<meta property="og:updated_time" content="2019-06-25T09:25:03.208Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mybatis 6.Mybatis注解开发">
 <meta name="twitter:description" content="注解开发补充 如果存在实体类和数据库名称不统一时 使用以下方式Results中id指定唯一标识 其他方法引用 可以使用@ResultMap引用id即可 多表查询及延迟加载延迟加载不用在主配置文件配置 FetchType中声明即可@Result注解中有one和many属性 一对一选择one 一对多选择many@one注解中有个FetchType枚举 LAZY EAGER 分别是延迟加载和立即加载co">
@@ -421,12 +421,24 @@
                 
               
 
-              <time title="创建时间：2019-05-06 14:11:01 / 修改时间：15:03:08" itemprop="dateCreated datePublished" datetime="2019-05-06T14:11:01+08:00">2019-05-06</time>
+              <time title="创建时间：2019-05-06 14:11:01" itemprop="dateCreated datePublished" datetime="2019-05-06T14:11:01+08:00">2019-05-06</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-25 17:25:03" itemprop="dateModified" datetime="2019-06-25T17:25:03+08:00">2019-06-25</time>
               
             
           </span>
@@ -501,7 +513,7 @@
 </li>
 </ul>
 <p><img src="https://i.loli.net/2019/05/06/5ccfdb61abfc4.png" alt></p>
-
+<h2 id="通过其他方法-获取封装"><a href="#通过其他方法-获取封装" class="headerlink" title="通过其他方法 获取封装"></a>通过其他方法 获取封装</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Select</span>(<span class="string">"select * from orders where id = #&#123;id&#125;"</span>)</span><br><span class="line">   <span class="meta">@Results</span>(value = &#123;</span><br><span class="line">           <span class="meta">@Result</span>(column = <span class="string">"productId"</span>,property = <span class="string">"product"</span>,javaType = Product.class,one = <span class="meta">@One</span>(select = <span class="string">"it.test.dao.ProductDao.findById"</span>)),</span><br><span class="line">           <span class="meta">@Result</span>(column = <span class="string">"memberId"</span>,property = <span class="string">"member"</span>,javaType = Member.class,one = <span class="meta">@One</span>(select = <span class="string">"it.test.dao.MemberDao.findById"</span>)),</span><br><span class="line">           <span class="meta">@Result</span>(column = <span class="string">"id"</span>,property = <span class="string">"travellers"</span>,javaType = List.class,many = <span class="meta">@Many</span>(select = <span class="string">"it.test.dao.TravellerDao.findByOrdersId"</span>))</span><br><span class="line">   &#125;)</span><br><span class="line">   <span class="function">Orders <span class="title">findById</span><span class="params">(String id)</span></span>;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -799,7 +811,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#注解开发补充"><span class="nav-number">1.</span> <span class="nav-text">注解开发补充</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#注解开发补充"><span class="nav-number">1.</span> <span class="nav-text">注解开发补充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过其他方法-获取封装"><span class="nav-number">2.</span> <span class="nav-text">通过其他方法 获取封装</span></a></li></ol></div>
             
 
           </div>
