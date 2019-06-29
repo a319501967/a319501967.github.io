@@ -108,7 +108,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/06/02/5cf33cc97c0a529140.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/03/5cf4934e79da522816.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/03/5cf49606135fd89683.png">
-<meta property="og:updated_time" content="2019-06-27T02:35:27.837Z">
+<meta property="og:updated_time" content="2019-06-29T03:40:21.112Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="牛客网面试错题集 1">
 <meta name="twitter:description" content="面向对象的五大基本原则（抽象类原则不是） 单一职责原则（SRP） 开放封闭原则（OCP）  里氏替换原则（LSP） 依赖倒置原则（DIP）  接口隔离原则（ISP）  Java语言特性Java致力于检查程序在编译和运行时的错误。Java虚拟机实现了跨平台接口类型检查帮助检查出许多开发早期出现的错误。Java自己操纵内存减少了内存出错的可能性。Java还实现了真数组，避免了覆盖数据的可能。 程序设计">
@@ -439,7 +439,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-06-27 10:35:27" itemprop="dateModified" datetime="2019-06-27T10:35:27+08:00">2019-06-27</time>
+                <time title="修改时间：2019-06-29 11:40:21" itemprop="dateModified" datetime="2019-06-29T11:40:21+08:00">2019-06-29</time>
               
             
           </span>
@@ -517,11 +517,14 @@
 <p> 类的初始化顺序是：<br> 1、初始化父类中的静态成员变量和静态代码块。<br> 2、初始化子类中的静态成员变量和静态代码块。<br> 3、初始化父类中的普通成员变量和代码块，再执行父类中的构造方法。<br> 4、初始化子类中的普通成员变量和代码块，在执行子类中的构造方法。</p>
 <p> 静态方法也算静态代码块<br> 如果两个相同等级<br> 则按顺序执行</p>
 <h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><p>基本要点 构造函数私有 唯一实例<br>*<em>静态工厂方法每次产出一个新的实例 *</em></p>
-<h3 id="volatile关键字"><a href="#volatile关键字" class="headerlink" title="volatile关键字"></a>volatile关键字</h3><ul>
-<li>具有可见性 </li>
-<li>禁止指令重排序优化</li>
+<h3 id="volatile关键字"><a href="#volatile关键字" class="headerlink" title="volatile关键字"></a>volatile关键字</h3><p>一旦一个共享变量（类的成员变量、类的静态成员变量）被volatile修饰之后，那么就具备了两层语义：</p>
+<ul>
+<li><p>保证了不同线程对这个变量进行操作时的可见性，即一个线程修改了某个变量的值，这新值对其他线程来说是立即可见的。</p>
+</li>
+<li><p>禁止进行指令重排序。</p>
+</li>
 </ul>
-<p> 出于运行速度考虑 java编辑器会把经常访问到的变量放到缓存中 读取变量则从缓存中读取 但在多线程中 内存中的值和缓存中的值可能出现不一样(一个线程更改 一个线程读取的还是原来缓存中的数据)。</p>
+<p>volatile只提供了保证访问该变量时，每次都是从内存中读取最新值，并不会使用寄存器缓存该值——每次都会从内存中读取。<br>而对该变量的修改，volatile并不提供原子性的保证。<br>由于及时更新，很可能导致另一线程访问最新变量值，无法跳出循环的情况<br>多线程下计数器必须使用锁保护</p>
 <p>volatile关键字用于限定变量只能从内存中读取 值一致<br>保证变量安全<br>但是他不能保证线程安全</p>
 <h3 id="Java表达式转型规则"><a href="#Java表达式转型规则" class="headerlink" title="Java表达式转型规则"></a>Java表达式转型规则</h3><p>Java表达式转型规则由低到高转换：<br>1、所有的byte,short,char型的值将被提升为int型；<br>2、如果有一个操作数是long型，计算结果是long型；<br>3、如果有一个操作数是float型，计算结果是float型；<br>4、如果有一个操作数是double型，计算结果是double型；<br>5、被fianl修饰的变量不会自动改变类型，当2个final修饰相操作时，结果会根据左边变量的类型而转化。</p>
 <ol>
@@ -772,6 +775,8 @@
                     
                       
                     
+                      
+                    
                     <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
@@ -788,6 +793,8 @@
                     
                   
                     
+                    
+                      
                     
                       
                     

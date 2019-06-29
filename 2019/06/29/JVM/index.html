@@ -96,16 +96,23 @@
 
 
 
-  <meta name="description" content="东北电力大学 信息与计算科学16级">
-<meta property="og:type" content="website">
-<meta property="og:title" content="代码呱唧唧">
-<meta property="og:url" content="http://yoursite.com/tags/内存区域/index.html">
+  <meta name="description" content="笔记整理节选了《深入理解Java虚拟机》和 JavaGuide 部分内容 侵删 Java 内存区域Java 虚拟机在执行 Java 程序的过程中会把它管理的内存划分成若干个不同的数据区域。JDK. 1.8 和之前的版本略有不同  ** JDK 1.8之前 *：  * JDK 1.8之后 **： 程序计数器程序计数器是一块较小的内存空间，可以看作是当前线程所执行的字节码的行号指示器。** 字节码解释">
+<meta name="keywords" content="JVM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JVM 1.内存模型 垃圾回收机制">
+<meta property="og:url" content="http://yoursite.com/2019/06/29/JVM/index.html">
 <meta property="og:site_name" content="代码呱唧唧">
-<meta property="og:description" content="东北电力大学 信息与计算科学16级">
+<meta property="og:description" content="笔记整理节选了《深入理解Java虚拟机》和 JavaGuide 部分内容 侵删 Java 内存区域Java 虚拟机在执行 Java 程序的过程中会把它管理的内存划分成若干个不同的数据区域。JDK. 1.8 和之前的版本略有不同  ** JDK 1.8之前 *：  * JDK 1.8之后 **： 程序计数器程序计数器是一块较小的内存空间，可以看作是当前线程所执行的字节码的行号指示器。** 字节码解释">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2019/06/29/5d1712a047d4a81528.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/29/5d1712a042d4151127.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/29/5d171690a998891205.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/29/5d171690c84b052189.png">
+<meta property="og:updated_time" content="2019-06-29T07:58:26.017Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="代码呱唧唧">
-<meta name="twitter:description" content="东北电力大学 信息与计算科学16级">
+<meta name="twitter:title" content="JVM 1.内存模型 垃圾回收机制">
+<meta name="twitter:description" content="笔记整理节选了《深入理解Java虚拟机》和 JavaGuide 部分内容 侵删 Java 内存区域Java 虚拟机在执行 Java 程序的过程中会把它管理的内存划分成若干个不同的数据区域。JDK. 1.8 和之前的版本略有不同  ** JDK 1.8之前 *：  * JDK 1.8之后 **： 程序计数器程序计数器是一块较小的内存空间，可以看作是当前线程所执行的字节码的行号指示器。** 字节码解释">
+<meta name="twitter:image" content="https://i.loli.net/2019/06/29/5d1712a047d4a81528.png">
 
 
 
@@ -113,7 +120,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/tags/内存区域/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/29/JVM/">
 
 
 
@@ -123,7 +130,7 @@
   };
 </script>
 
-  <title>标签: 内存区域 | 代码呱唧唧</title>
+  <title>JVM 1.内存模型 垃圾回收机制 | 代码呱唧唧</title>
   
 
 
@@ -171,7 +178,7 @@
     
   
 
-  <div class="container sidebar-position-right ">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -247,7 +254,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -352,83 +359,243 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>内存区域<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/29/JVM/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="代码呱唧唧">
+      <meta itemprop="description" content="东北电力大学 信息与计算科学16级">
+      <meta itemprop="image" content="/images/head.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="代码呱唧唧">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/05/28/Java虚拟机-1.Java内存区域/" itemprop="url">
-            
-              <span itemprop="name">Java虚拟机 1.Java内存区域</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">JVM 1.内存模型 垃圾回收机制
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-28T12:04:51+08:00" content="2019-05-28">
-          05-28
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-29 15:21:52 / 修改时间：15:58:26" itemprop="dateCreated datePublished" datetime="2019-06-29T15:21:52+08:00">2019-06-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JVM/" itemprop="url" rel="index"><span itemprop="name">JVM</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/06/29/JVM/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/29/JVM/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong><font color="red">笔记整理节选了《深入理解Java虚拟机》和 JavaGuide 部分内容 侵删</font></strong></p>
+<h2 id="Java-内存区域"><a href="#Java-内存区域" class="headerlink" title="Java 内存区域"></a>Java 内存区域</h2><p>Java 虚拟机在执行 Java 程序的过程中会把它管理的内存划分成若干个不同的数据区域。JDK. 1.8 和之前的版本略有不同</p>
+<p> ** JDK 1.8之前 *<em>：
+<img src="https://i.loli.net/2019/06/29/5d1712a047d4a81528.png" alt><br> *</em> JDK 1.8之后 **：<br><img src="https://i.loli.net/2019/06/29/5d1712a042d4151127.png" alt></p>
+<h3 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h3><p>程序计数器是一块较小的内存空间，可以看作是当前线程所执行的字节码的行号指示器。<br>** 字节码解释器工作时通过改变这个计数器的值来选取下一条需要执行的字节码指令，分支、循环、跳转、异常处理、线程恢复等功能都需要依赖这个计数器来完。**</p>
+<p><strong>另外，为了线程切换后能恢复到正确的执行位置，每条线程都需要有一个独立的程序计数器，各线程之间计数器互不影响，独立存储，我们称这类内存区域为“线程私有”的内存。</strong></p>
+<p>** 注意：程序计数器是唯一一个不会出现 OutOfMemoryError 的内存区域，它的生命周期随着线程的创建而创建，随着线程的结束而死亡。**</p>
+<h3 id="Java-虚拟机栈"><a href="#Java-虚拟机栈" class="headerlink" title="Java 虚拟机栈"></a>Java 虚拟机栈</h3><p>与程序计数器一样，Java虚拟机栈也是线程私有的，它的生命周期和线程相同，<strong>描述的是 Java 方法执行的内存模型，每次方法调用的数据都是通过栈传递的。</strong></p>
+<p>Java 内存可以粗糙的区分为<strong>堆内存（Heap）和栈内存(Stack)</strong>,其中栈就是现在说的虚拟机栈，或者说是虚拟机栈中局部变量表部分。 （实际上，Java虚拟机栈是由一个个栈帧组成，而每个栈帧中都拥有：局部变量表、操作数栈、动态链接、方法出口信息。）</p>
+<p>局部变量表主要存放了编译器<strong>可知的各种数据类型（boolean、byte、char、short、int、float、long、double）、对象引用（reference类型，它不同于对象本身，可能是一个指向对象起始地址的引用指针，也可能是指向一个代表对象的句柄或其他与此对象相关的位置）。</strong></p>
+<p>** Java 虚拟机栈会出现两种异常：StackOverFlowError 和 OutOfMemoryError。**</p>
+<p><strong>StackOverFlowError</strong>： 若Java虚拟机栈的内存大小不允许动态扩展，那么当线程请求栈的深度超过当前Java虚拟机栈的最大深度的时候，就抛出StackOverFlowError异常。<br><strong>OutOfMemoryError</strong>： 若 Java 虚拟机栈的内存大小允许动态扩展，且当线程请求栈时内存用完了，无法再动态扩展了，此时抛出OutOfMemoryError异常。<br>Java 虚拟机栈也是线程私有的，每个线程都有各自的Java虚拟机栈，而且随着线程的创建而创建，随着线程的死亡而死亡。</p>
+<h4 id="那么方法-函数如何调用"><a href="#那么方法-函数如何调用" class="headerlink" title="那么方法/函数如何调用"></a>那么方法/函数如何调用</h4><p>Java 栈可用类比数据结构中栈，Java 栈中保存的主要内容是栈帧，每一次函数调用都会有一个对应的栈帧被压入Java栈，每一个函数调用结束后，都会有一个栈帧被弹出。</p>
+<p>Java方法有两种返回方式：</p>
+<p>return 语句。<br>抛出异常。<br>不管哪种返回方式都会导致栈帧被弹出。</p>
+<h3 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h3><p>和虚拟机栈所发挥的作用非常相似，区别是： <strong>虚拟机栈为虚拟机执行 Java 方法 （也就是字节码）服务，而本地方法栈则为虚拟机使用到的 Native (调用其他语言) 方法服务。 在 HotSpot 虚拟机中和 Java 虚拟机栈合二为一。</strong></p>
+<p>本地方法被执行的时候，在本地方法栈也会创建一个栈帧，用于存放该本地方法的局部变量表、操作数栈、动态链接、出口信息。</p>
+<p>方法执行完毕后相应的栈帧也会出栈并释放内存空间，也会出现 StackOverFlowError 和 OutOfMemoryError 两种异常。</p>
+<h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><p>Java 虚拟机所管理的<strong>内存中最大的一块</strong>，Java 堆是<strong>所有线程共享的一块内存区域</strong>，在虚拟机启动时创建。此内存区域的唯一目的就是存放对象实例，几乎所有的<strong>对象实例以及数组</strong>在这里分配内存。</p>
+<p><strong>Java 堆是垃圾收集器管理的主要区域，因此也被称作GC堆（Garbage Collected Heap</strong>）.从垃圾回收的角度，由于<strong>现在收集器基本都采用分代垃圾收集算法</strong>，所以Java堆还可以细分为：<strong>新生代和老年代：再细致一点有：Eden空间、From Survivor、To Survivor空间等。进一步划分的目的是更好地回收内存，或者更快地分配内存。</strong><br><img src="https://i.loli.net/2019/06/29/5d171690a998891205.png" alt><br>上图所示的 <strong>eden区、s0区、s1区都属于新生代，tentired 区属于老年代</strong>。大部分情况，对象都会首先在 Eden 区域分配，在一次新生代垃圾回收后，如果对象还存活，则会进入 s0 或者 s1，并且对象的年龄还会加 1(Eden区-&gt;Survivor 区后对象的初始年龄变为1)，当它的年龄增加到一定程度（默认为15岁），就会被晋升到老年代中。对象晋升到老年代的年龄阈值，可以通过参数 -XX:MaxTenuringThreshold 来设置。</p>
+<h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3><p>方法区与 Java 堆一样，是各个** 线程共享的内存区域<strong>，它用于存储</strong>已被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据<strong>。虽然Java虚拟机规范把方法区描述为堆的一个逻辑部分，但是它却有一个别名叫做 **Non-Heap（非堆）</strong>，目的应该是与 Java 堆区分开来。</p>
+<p>方法区也被称为永久代。</p>
+<h4 id="方法区和永生代关系"><a href="#方法区和永生代关系" class="headerlink" title="方法区和永生代关系"></a>方法区和永生代关系</h4><p>《Java虚拟机规范》只是规定了有方法区这么个概念和它的作用，并没有规定如何去实现它。那么，在不同的 JVM 上方法区的实现肯定是不同的了。 方法区和永久代的关系很像Java中接口和类的关系，类实现了接口，而永久代就是HotSpot虚拟机对虚拟机规范中方法区的一种实现方式。 也就是说，永久代是HotSpot的概念，方法区是Java虚拟机规范中的定义，是一种规范，而永久代是一种实现，一个是标准一个是实现，其他的虚拟机实现并没有永久带这一说法。</p>
+<h4 id="为什么要将永久代-PermGen-替换为元空间-MetaSpace-呢"><a href="#为什么要将永久代-PermGen-替换为元空间-MetaSpace-呢" class="headerlink" title="为什么要将永久代(PermGen)替换为元空间(MetaSpace)呢?"></a>为什么要将永久代(PermGen)替换为元空间(MetaSpace)呢?</h4><p>整个永久代有一个 JVM 本身设置固定大小上线，无法进行调整，而元空间使用的是直接内存，受本机可用内存的限制，并且永远不会得到<code>java.lang.OutOfMemoryError</code>。你可以使用 <code>-XX：MaxMetaspaceSize</code> 标志设置最大元空间大小，默认值为 unlimited，这意味着它只受系统内存的限制。<code>-XX：MetaspaceSize</code> 调整标志定义元空间的初始大小如果未指定此标志，则 Metaspace 将根据运行时的应用程序需求动态地重新调整大小。</p>
+<h3 id="运行时常量池"><a href="#运行时常量池" class="headerlink" title="运行时常量池"></a>运行时常量池</h3><p>运行时常量池是方法区的一部分。Class 文件中除了<strong>有类的版本、字段、方法、接口等描述信息外，还有常量池信息（用于存放编译期生成的各种字面量和符号引用）</strong></p>
+<p>既然运行时常量池时方法区的一部分，自然受到方法区内存的限制，当常量池无法再申请到内存时会抛出 OutOfMemoryError 异常。</p>
+<p>** JDK1.7及之后版本的 JVM 已经将运行时常量池从方法区中移了出来，在 Java 堆（Heap）中开辟了一块区域存放运行时常量池。**
+<img src="https://i.loli.net/2019/06/29/5d171690c84b052189.png" alt></p>
+<h3 id="直接内存"><a href="#直接内存" class="headerlink" title="直接内存"></a>直接内存</h3><p>** 直接内存并不是虚拟机运行时数据区的一部分，也不是虚拟机规范中定义的内存区域，但是这部分内存也被频繁地使用。而且也可能导致 OutOfMemoryError 异常出现。**</p>
+<p>JDK1.4 中新加入的 <strong>NIO(New Input/Output) 类</strong>，引入了一种基于通道（Channel） 与缓存区（Buffer） 的 I/O 方式，它可以<strong>直接使用 Native 函数库直接分配堆外内存，然后通过一个存储在 Java 堆中的 DirectByteBuffer 对象作为这块内存的引用进行操作</strong>。这样就能在一些场景中显著提高性能，因为避免了在 Java 堆和 Native 堆之间来回复制数据。</p>
+<p>本机直接内存的分配不会收到 Java 堆的限制，但是，既然是<strong>内存就会受到本机总内存大小以及处理器寻址空间的限制。</strong></p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JVM/" rel="tag"><i class="fa fa-tag"></i> JVM</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/24/读书-图解HTTP-1.了解web及网络基础/" rel="next" title="读书-图解HTTP-1.了解web及网络基础">
+                <i class="fa fa-chevron-left"></i> 读书-图解HTTP-1.了解web及网络基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -448,8 +615,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -505,6 +681,8 @@
                     
                       
                     
+                      
+                    
                     <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
@@ -521,6 +699,8 @@
                     
                   
                     
+                    
+                      
                     
                       
                     
@@ -628,6 +808,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-内存区域"><span class="nav-number">1.</span> <span class="nav-text">Java 内存区域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#程序计数器"><span class="nav-number">1.1.</span> <span class="nav-text">程序计数器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-虚拟机栈"><span class="nav-number">1.2.</span> <span class="nav-text">Java 虚拟机栈</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#那么方法-函数如何调用"><span class="nav-number">1.2.1.</span> <span class="nav-text">那么方法/函数如何调用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地方法栈"><span class="nav-number">1.3.</span> <span class="nav-text">本地方法栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#堆"><span class="nav-number">1.4.</span> <span class="nav-text">堆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法区"><span class="nav-number">1.5.</span> <span class="nav-text">方法区</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法区和永生代关系"><span class="nav-number">1.5.1.</span> <span class="nav-text">方法区和永生代关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为什么要将永久代-PermGen-替换为元空间-MetaSpace-呢"><span class="nav-number">1.5.2.</span> <span class="nav-text">为什么要将永久代(PermGen)替换为元空间(MetaSpace)呢?</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行时常量池"><span class="nav-number">1.6.</span> <span class="nav-text">运行时常量池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接内存"><span class="nav-number">1.7.</span> <span class="nav-text">直接内存</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -759,6 +956,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
 
   
 
@@ -804,6 +1005,8 @@
 
 
 
+
+  
 
 
   
