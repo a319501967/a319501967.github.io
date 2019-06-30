@@ -97,64 +97,64 @@
 
 
   <meta name="description" content="0.学习目标 了解SpringBoot的作用 掌握java配置的方式 了解SpringBoot自动配置原理 掌握SpringBoot的基本使用 了解Thymeleaf的基本使用  1. 了解SpringBoot在这一部分，我们主要了解以下3个问题：  什么是SpringBoot 为什么要学习SpringBoot SpringBoot的特点  1.1.什么是SpringBootSpringBoot是">
-<meta name="keywords" content="Spring Boot">
+<meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot 1.SpringBoot入门">
 <meta property="og:url" content="http://yoursite.com/2019/06/30/SpringBoot-1.SpringBoot入门/index.html">
 <meta property="og:site_name" content="代码呱唧唧">
 <meta property="og:description" content="0.学习目标 了解SpringBoot的作用 掌握java配置的方式 了解SpringBoot自动配置原理 掌握SpringBoot的基本使用 了解Thymeleaf的基本使用  1. 了解SpringBoot在这一部分，我们主要了解以下3个问题：  什么是SpringBoot 为什么要学习SpringBoot SpringBoot的特点  1.1.什么是SpringBootSpringBoot是">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/06/30/SpringBoot-1.SpringBoot入门/20190630203617/1525484756737.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525485888078.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525485977528.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525486079389.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525486188374.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525486236967.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525486282929.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525486435199.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525486980765.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525487293907.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525487465325.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525487613365.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525487705460.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525487820824.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525492528558.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525496325572.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525492528558.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525496543249.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525497513206.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525488044650.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525488226710.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525488518514.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525498265579.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525498351385.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525499397690.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525499426598.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525499859426.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525500000816.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525500405278.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525500452517.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525500697391.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525500810914.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525500921773.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525511878440.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525500921773.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525512196866.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525512253682.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525513555179.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525514424562.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525516441005.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525516714124.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525517263421.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525522481007.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525522811359.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525521721279.png">
-<meta property="og:image" content="d:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525523911854.png">
-<meta property="og:updated_time" content="2019-06-30T12:43:12.270Z">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b020d82b392075.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b071cfe3f41378.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b071a826431578.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b071b832019779.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b0c7e9c1633497.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b0c78c11a70123.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b0c78c00c96718.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b0c78c11e16774.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b0c7e29b753352.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b10c1a97b96111.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b10c1a52a54081.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b10c46d7451272.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3e348a5237507.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3e2e890b12410.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3e32fc0815486.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3e2ec1bf91954.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3e32954935722.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3e39a6cb93235.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3e3aa59b13208.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3e3c46a195967.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3e3e75e117367.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3e413bbe37414.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3f041bb483759.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3f04674286620.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3f14285034807.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3f1445ee76373.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3f05da5835347.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3f10533514070.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3f10a13313077.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3f12f1a129803.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3f1b0ed484244.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3f1ad66c50109.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b4032ad7640920.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b403122c191238.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b4032ca0717377.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b4031526517296.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b403a930932782.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b403ca94357323.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b403f37d048919.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b40407a8871431.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b404164bd42585.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b40c67f3a58214.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b40447c3250178.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b40c4af0489274.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b40c3024d23975.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/30/5d18b3f6e5aaf12826.png">
+<meta property="og:updated_time" content="2019-06-30T13:10:36.675Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot 1.SpringBoot入门">
 <meta name="twitter:description" content="0.学习目标 了解SpringBoot的作用 掌握java配置的方式 了解SpringBoot自动配置原理 掌握SpringBoot的基本使用 了解Thymeleaf的基本使用  1. 了解SpringBoot在这一部分，我们主要了解以下3个问题：  什么是SpringBoot 为什么要学习SpringBoot SpringBoot的特点  1.1.什么是SpringBootSpringBoot是">
-<meta name="twitter:image" content="http://yoursite.com/2019/06/30/SpringBoot-1.SpringBoot入门/20190630203617/1525484756737.png">
+<meta name="twitter:image" content="https://i.loli.net/2019/06/30/5d18b020d82b392075.png">
 
 
 
@@ -464,7 +464,7 @@
                 
               
 
-              <time title="创建时间：2019-06-30 20:36:17 / 修改时间：20:43:12" itemprop="dateCreated datePublished" datetime="2019-06-30T20:36:17+08:00">2019-06-30</time>
+              <time title="创建时间：2019-06-30 20:36:17 / 修改时间：21:10:36" itemprop="dateCreated datePublished" datetime="2019-06-30T20:36:17+08:00">2019-06-30</time>
             
 
             
@@ -486,7 +486,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Spring-Boot/" itemprop="url" rel="index"><span itemprop="name">Spring Boot</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/SpringBoot/" itemprop="url" rel="index"><span itemprop="name">SpringBoot</span></a></span>
 
                 
                 
@@ -548,7 +548,7 @@
 <li>SpringBoot的特点</li>
 </ul>
 <h2 id="1-1-什么是SpringBoot"><a href="#1-1-什么是SpringBoot" class="headerlink" title="1.1.什么是SpringBoot"></a>1.1.什么是SpringBoot</h2><p>SpringBoot是Spring项目中的一个子工程，与我们所熟知的Spring-framework 同属于spring的产品:</p>
-<p><img src="20190630203617/1525484756737.png" alt="1525484756737"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b020d82b392075.png" alt></p>
 <p>我们可以看到下面的一段介绍：</p>
 <blockquote>
 <p>Takes an opinionated view of building production-ready Spring applications. Spring Boot favors convention over configuration and is designed to get you up and running as quickly as possible.</p>
@@ -582,20 +582,19 @@
 <p>更多细节，大家可以到<a href="http://projects.spring.io/spring-boot/" target="_blank" rel="noopener">官网</a>查看。</p>
 <h1 id="2-快速入门"><a href="#2-快速入门" class="headerlink" title="2.快速入门"></a>2.快速入门</h1><p>接下来，我们就来利用SpringBoot搭建一个web工程，体会一下SpringBoot的魅力所在！</p>
 <h2 id="2-1-创建工程"><a href="#2-1-创建工程" class="headerlink" title="2.1.创建工程"></a>2.1.创建工程</h2><p>我们先新建一个空的工程：</p>
-<p><img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525485888078.png" alt="1525485888078"></p>
-<p>工程名为demo：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525485977528.png" alt="1525485977528"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b071cfe3f41378.png" alt></p>
+<p>工程名为demo：<br><img src="https://i.loli.net/2019/06/30/5d18b071a826431578.png" alt></p>
 <p>新建一个model：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525486079389.png" alt="1525486079389"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b071b832019779.png" alt></p>
 <p>使用maven来构建：</p>
-<p><img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525486188374.png" alt="1525486188374"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b0c7e9c1633497.png" alt></p>
 <p>然后填写项目坐标：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525486236967.png" alt="1525486236967"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b0c78c11a70123.png" alt></p>
 <p>目录结构：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525486282929.png" alt="1525486282929"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b0c78c00c96718.png" alt></p>
 <p>项目结构：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525486435199.png" alt="1525486435199"></p>
-<h2 id="2-2-添加依赖"><a href="#2-2-添加依赖" class="headerlink" title="2.2.添加依赖"></a>2.2.添加依赖</h2><p>看到这里很多同学会有疑惑，前面说传统开发的问题之一就是依赖管理混乱，怎么这里我们还需要管理依赖呢？难道SpringBoot不帮我们管理吗？</p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b0c78c11e16774.png" alt></p>
+<h2 id="2-2-添加依赖"><a href="#2-2-添加依赖" class="headerlink" title="2.2.添加依赖"></a>2.2.添加依赖</h2><p>前面说传统开发的问题之一就是依赖管理混乱，怎么这里我们还需要管理依赖呢？难道SpringBoot不帮我们管理吗？</p>
 <p>别着急，现在我们的项目与SpringBoot还没有什么关联。SpringBoot提供了一个名为spring-boot-starter-parent的工程，里面已经对各种常用依赖（并非全部）的版本进行了管理，我们的项目需要以这个项目为父工程，这样我们就不用操心依赖的版本问题了，需要什么依赖，直接引入坐标即可！</p>
 <h3 id="2-2-1-添加父工程坐标"><a href="#2-2-1-添加父工程坐标" class="headerlink" title="2.2.1.添加父工程坐标"></a>2.2.1.添加父工程坐标</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -604,7 +603,7 @@
 
 <p>需要注意的是，我们并没有在这里指定版本信息。因为SpringBoot的父工程已经对版本进行了管理了。</p>
 <p>这个时候，我们会发现项目中多出了大量的依赖：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525486980765.png" alt="1525486980765"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b0c7e29b753352.png" alt></p>
 <p>这些都是SpringBoot根据spring-boot-starter-web这个依赖自动引入的，而且所有的版本都已经管理好，不会出现冲突。</p>
 <h3 id="2-2-3-管理jdk版本"><a href="#2-2-3-管理jdk版本" class="headerlink" title="2.2.3.管理jdk版本"></a>2.2.3.管理jdk版本</h3><p>默认情况下，maven工程的jdk版本是1.5，而我们开发使用的是1.8，因此这里我们需要修改jdk版本，只需要简单的添加以下属性即可：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -612,27 +611,27 @@
 <h3 id="2-2-4-完整pom"><a href="#2-2-4-完整pom" class="headerlink" title="2.2.4.完整pom"></a>2.2.4.完整pom</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.leyou.demo<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springboot-demo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="2-3-启动类"><a href="#2-3-启动类" class="headerlink" title="2.3.启动类"></a>2.3.启动类</h2><p>Spring Boot项目通过main函数即可启动，我们需要创建一个启动类：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525487293907.png" alt="1525487293907"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b10c1a97b96111.png" alt></p>
 <p>然后编写main函数：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(Application.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="2-4-编写controller"><a href="#2-4-编写controller" class="headerlink" title="2.4.编写controller"></a>2.4.编写controller</h2><p>接下来，我们就可以像以前那样开发SpringMVC的项目了！</p>
 <p>我们编写一个controller：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525487465325.png" alt="1525487465325"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b10c1a52a54081.png" alt></p>
 <p>代码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"hello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello, spring boot!"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="2-5-启动测试"><a href="#2-5-启动测试" class="headerlink" title="2.5.启动测试"></a>2.5.启动测试</h2><p>接下来，我们运行main函数，查看控制台：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525487613365.png" alt="1525487613365"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b10c46d7451272.png" alt></p>
 <p>并且可以看到监听的端口信息：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525487705460.png" alt="1525487705460"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3e348a5237507.png" alt></p>
 <ul>
 <li>1）监听的端口是8080</li>
 <li>2）SpringMVC的映射路径是：/</li>
 <li>3）<code>/hello</code>路径已经映射到了<code>HelloController</code>中的<code>hello()</code>方法</li>
 </ul>
 <p>打开页面访问：<a href="http://localhost:8080/hello" target="_blank" rel="noopener">http://localhost:8080/hello</a></p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525487820824.png" alt="1525487820824"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3e2e890b12410.png" alt></p>
 <p>测试成功了！</p>
 <h1 id="3-Java配置"><a href="#3-Java配置" class="headerlink" title="3.Java配置"></a>3.Java配置</h1><p>在入门案例中，我们没有任何的配置，就可以实现一个SpringMVC的项目了，快速、高效！</p>
 <p>但是有同学会有疑问，如果没有任何的xml，那么我们如果要配置一个Bean该怎么办？比如我们要配置一个数据库连接池，以前会这么玩：</p>
@@ -681,7 +680,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> DataSource dataSource;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"hello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"hello, spring boot!"</span> + dataSource;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>然后Debug运行并查看：</p>
-<p><img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525492528558.png" alt="1525492528558"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3e32fc0815486.png" alt></p>
 <p>属性注入成功了！</p>
 <h2 id="3-3-SpringBoot的属性注入"><a href="#3-3-SpringBoot的属性注入" class="headerlink" title="3.3.SpringBoot的属性注入"></a>3.3.SpringBoot的属性注入</h2><p>在上面的案例中，我们实验了java配置方式。不过属性注入使用的是@Value注解。这种方式虽然可行，但是不够强大，因为它只能注入基本类型值。</p>
 <p>在SpringBoot中，提供了一种新的属性注入方式，支持各种java基本数据类型及复杂类型的注入。</p>
@@ -696,7 +695,7 @@
 <li><p>在类上定义各个属性，名称必须与属性文件中<code>jdbc.</code>后面部分一致</p>
 </li>
 <li><p>需要注意的是，这里我们并没有指定属性文件的地址，所以我们需要把jdbc.properties名称改为application.properties，这是SpringBoot默认读取的属性文件名：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525496325572.png" alt="1525496325572"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3e2ec1bf91954.png" alt></p>
 </li>
 </ul>
 <p>2）在JdbcConfig中使用这个属性：</p>
@@ -722,9 +721,9 @@
 </ul>
 <p>本例中，我们采用第三种方式。</p>
 <p>3）测试结果：</p>
-<p><img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525492528558.png" alt="1525492528558"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3e32954935722.png" alt></p>
 <p>大家会觉得这种方式似乎更麻烦了，事实上这种方式有更强大的功能，也是SpringBoot推荐的注入方式。两者对比关系：</p>
-<p><img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525496543249.png" alt="1525496543249"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3e39a6cb93235.png" alt></p>
 <p>优势：</p>
 <ul>
 <li><p>Relaxed binding：松散绑定</p>
@@ -742,10 +741,10 @@
 
 <p>我们直接把<code>@ConfigurationProperties(prefix = &quot;jdbc&quot;)</code>声明在需要使用的<code>@Bean</code>的方法上，然后SpringBoot就会自动调用这个Bean（此处是DataSource）的set方法，然后完成注入。使用的前提是：<strong>该类必须有对应属性的set方法！</strong></p>
 <p>我们将jdbc的url改成：/heima，再次测试：</p>
-<p><img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525497513206.png" alt="1525497513206"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3e3aa59b13208.png" alt></p>
 <h1 id="4-自动配置原理"><a href="#4-自动配置原理" class="headerlink" title="4.自动配置原理"></a>4.自动配置原理</h1><p>使用SpringBoot之后，一个整合了SpringMVC的WEB工程开发，变的无比简单，那些繁杂的配置都消失不见了，这是如何做到的？</p>
 <p>一切魔力的开始，都是从我们的main函数来的，所以我们再次来看下启动类：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525488044650.png" alt="1525488044650"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3e3c46a195967.png" alt></p>
 <p>我们发现特别的地方有两个：</p>
 <ul>
 <li>注解：@SpringBootApplication</li>
@@ -753,7 +752,7 @@
 </ul>
 <p>我们分别来研究这两个部分。</p>
 <h2 id="4-1-了解-SpringBootApplication"><a href="#4-1-了解-SpringBootApplication" class="headerlink" title="4.1.了解@SpringBootApplication"></a>4.1.了解@SpringBootApplication</h2><p>点击进入，查看源码：</p>
-<p><img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525488226710.png" alt="1525488226710"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3e3e75e117367.png" alt></p>
 <p>这里重点的注解有3个：</p>
 <ul>
 <li>@SpringBootConfiguration</li>
@@ -761,7 +760,7 @@
 <li>@ComponentScan</li>
 </ul>
 <h3 id="4-1-1-SpringBootConfiguration"><a href="#4-1-1-SpringBootConfiguration" class="headerlink" title="4.1.1.@SpringBootConfiguration"></a>4.1.1.@SpringBootConfiguration</h3><p>我们继续点击查看源码：</p>
-<p><img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525488518514.png" alt="1525488518514"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3e413bbe37414.png" alt></p>
 <p>通过这段我们可以看出，在这个注解上面，又有一个<code>@Configuration</code>注解。通过上面的注释阅读我们知道：这个注解的作用就是声明当前类是一个配置类，然后Spring会自动扫描到添加了<code>@Configuration</code>的类，并且读取其中的配置信息。而<code>@SpringBootConfiguration</code>是来声明当前类是SpringBoot应用的配置类，项目中只能有一个。所以一般我们无需自己添加。</p>
 <h3 id="4-1-2-EnableAutoConfiguration"><a href="#4-1-2-EnableAutoConfiguration" class="headerlink" title="4.1.2.@EnableAutoConfiguration"></a>4.1.2.@EnableAutoConfiguration</h3><p>关于这个注解，官网上有一段说明：</p>
 <blockquote>
@@ -774,9 +773,9 @@
 <p>总结，SpringBoot内部对大量的第三方库或Spring内部库进行了默认配置，这些配置是否生效，取决于我们是否引入了对应库所需的依赖，如果有那么默认配置就会生效。</p>
 <p>所以，我们使用SpringBoot构建一个项目，只需要引入所需框架的依赖，配置就可以交给SpringBoot处理了。除非你不希望使用SpringBoot的默认配置，它也提供了自定义配置的入口。</p>
 <h4 id="4-1-3-ComponentScan"><a href="#4-1-3-ComponentScan" class="headerlink" title="4.1.3.@ComponentScan"></a>4.1.3.@ComponentScan</h4><p>我们跟进源码：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525498265579.png" alt="1525498265579"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3f041bb483759.png" alt></p>
 <p>并没有看到什么特殊的地方。我们查看注释：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525498351385.png" alt="1525498351385"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3f04674286620.png" alt></p>
 <p>大概的意思：</p>
 <blockquote>
 <p>配置组件扫描的指令。提供了类似与<code>&lt;context:component-scan&gt;</code>标签的作用</p>
@@ -789,9 +788,9 @@
 <li>为何依赖引入就会触发配置呢？</li>
 </ul>
 <p>其实在我们的项目中，已经引入了一个依赖：spring-boot-autoconfigure，其中定义了大量自动配置类：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525499397690.png" alt="1525499397690"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3f14285034807.png" alt></p>
 <p>还有：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525499426598.png" alt="1525499426598"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3f1445ee76373.png" alt></p>
 <p>非常多，几乎涵盖了现在主流的开源框架，例如：</p>
 <ul>
 <li>redis</li>
@@ -806,9 +805,9 @@
 </ul>
 <p>… 等等</p>
 <p>我们来看一个我们熟悉的，例如SpringMVC，查看mvc 的自动配置类：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525499859426.png" alt="1525499859426"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3f05da5835347.png" alt></p>
 <p>打开WebMvcAutoConfiguration：</p>
-<p><img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525500000816.png" alt="1525500000816"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3f10533514070.png" alt></p>
 <p>我们看到这个类上的4个注解：</p>
 <ul>
 <li><code>@Configuration</code>：声明这个类是一个配置类</li>
@@ -826,18 +825,18 @@
 </ul>
 <p>接着，我们查看该类中定义了什么：</p>
 <p>视图解析器：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525500405278.png" alt="1525500405278"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3f10a13313077.png" alt></p>
 <p>处理器适配器（HandlerAdapter）：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525500452517.png" alt="1525500452517"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3f12f1a129803.png" alt></p>
 <p>还有很多，这里就不一一截图了。</p>
 <h3 id="4-2-2-默认配置属性"><a href="#4-2-2-默认配置属性" class="headerlink" title="4.2.2.默认配置属性"></a>4.2.2.默认配置属性</h3><p>另外，这些默认配置的属性来自哪里呢？</p>
-<p><img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525500697391.png" alt="1525500697391"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3f1b0ed484244.png" alt></p>
 <p>我们看到，这里通过@EnableAutoConfiguration注解引入了两个属性：WebMvcProperties和ResourceProperties。这不正是SpringBoot的属性注入玩法嘛。</p>
 <p>我们查看这两个属性类：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525500810914.png" alt="1525500810914"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3f1ad66c50109.png" alt></p>
 <p>找到了内部资源视图解析器的prefix和suffix属性。</p>
 <p>ResourceProperties中主要定义了静态资源（.js,.html,.css等)的路径：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525500921773.png" alt="1525500921773"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b4032ad7640920.png" alt></p>
 <p>如果我们要覆盖这些默认属性，只需要在application.properties中定义与其前缀prefix和字段名一致的属性即可。</p>
 <h2 id="4-3-总结"><a href="#4-3-总结" class="headerlink" title="4.3.总结"></a>4.3.总结</h2><p>SpringBoot为我们提供了默认配置，而默认配置生效的条件一般有两个：</p>
 <ul>
@@ -856,10 +855,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 映射端口</span><br><span class="line">server.port=80</span><br></pre></td></tr></table></figure>
 
 <p>重启服务后测试：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525511878440.png" alt="1525511878440"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b403122c191238.png" alt></p>
 <h3 id="5-1-2-访问静态资源"><a href="#5-1-2-访问静态资源" class="headerlink" title="5.1.2.访问静态资源"></a>5.1.2.访问静态资源</h3><p>现在，我们的项目是一个jar工程，那么就没有webapp，我们的静态资源该放哪里呢？</p>
 <p>回顾我们上面看的源码，有一个叫做ResourceProperties的类，里面就定义了静态资源的默认查找路径：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525500921773.png" alt="1525500921773"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b4032ca0717377.png" alt></p>
 <p>默认的静态资源路径为：</p>
 <ul>
 <li>classpath:/META-INF/resources/</li>
@@ -869,9 +868,9 @@
 </ul>
 <p>只要静态资源放在这些目录中任何一个，SpringMVC都会帮我们处理。</p>
 <p>我们习惯会把静态资源放在<code>classpath:/static/</code>目录下。我们创建目录，并且添加一些静态资源：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525512196866.png" alt="1525512196866"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b4031526517296.png" alt></p>
 <p>重启项目后测试：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525512253682.png" alt="1525512253682"></p>
+<p> <img src="https://i.loli.net/2019/06/30/5d18b403a930932782.png" alt></p>
 <h3 id="5-1-3-添加拦截器"><a href="#5-1-3-添加拦截器" class="headerlink" title="5.1.3.添加拦截器"></a>5.1.3.添加拦截器</h3><p>拦截器也是我们经常需要使用的，在SpringBoot中该如何配置呢？</p>
 <p>拦截器不是一个普通属性，而是一个类，所以就要用到java配置方式了。在SpringBoot官方文档中有这么一段说明：</p>
 <blockquote>
@@ -891,7 +890,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MvcConfig</span> <span class="keyword">implements</span> <span class="title">WebMvcConfigurer</span></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 通过<span class="doctag">@Bean</span>注解，将我们定义的拦截器注册到Spring容器</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> LoginInterceptor <span class="title">loginInterceptor</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> LoginInterceptor();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 重写接口中的addInterceptors方法，添加自定义拦截器</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> registry</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 通过registry来注册拦截器，通过addPathPatterns来添加拦截路径</span></span><br><span class="line">        registry.addInterceptor(<span class="keyword">this</span>.loginInterceptor()).addPathPatterns(<span class="string">"/**"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>结构如下：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525513555179.png" alt="1525513555179"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b403ca94357323.png" alt></p>
 <p>接下来运行并查看日志：</p>
 <p>你会发现日志中什么都没有，因为我们记录的log级别是debug，默认是显示info以上，我们需要进行配置。</p>
 <p>SpringBoot通过<code>logging.level.*=debug</code>来配置日志级别，*填写包名</p>
@@ -911,9 +910,9 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserMapper userMapper;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">queryById</span><span class="params">(Long id)</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.userMapper.selectByPrimaryKey(id);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Transactional</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteById</span><span class="params">(Long id)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.userMapper.deleteByPrimaryKey(id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="5-3-整合连接池"><a href="#5-3-整合连接池" class="headerlink" title="5.3.整合连接池"></a>5.3.整合连接池</h2><p>其实，在刚才引入jdbc启动器的时候，SpringBoot已经自动帮我们引入了一个连接池：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525514424562.png" alt="1525514424562"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b403f37d048919.png" alt></p>
 <p>HikariCP应该是目前速度最快的连接池了，我们看看它与c3p0的对比：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525516441005.png" alt="1525516441005"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b40407a8871431.png" alt></p>
 <p>因此，我们只需要指定连接池参数即可：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 连接四大参数</span><br><span class="line">spring.datasource.url=jdbc:mysql://localhost:3306/heima</span><br><span class="line">spring.datasource.username=root</span><br><span class="line">spring.datasource.password=123</span><br><span class="line"># 可省略，SpringBoot自动推断</span><br><span class="line">spring.datasource.driverClassName=com.mysql.jdbc.Driver</span><br><span class="line"></span><br><span class="line">spring.datasource.hikari.idle-timeout=60000</span><br><span class="line">spring.datasource.hikari.maximum-pool-size=30</span><br><span class="line">spring.datasource.hikari.minimum-idle=10</span><br></pre></td></tr></table></figure>
 
@@ -942,9 +941,9 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserService userService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/hello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> User <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        User user = <span class="keyword">this</span>.userService.queryById(<span class="number">8L</span>);</span><br><span class="line">        <span class="keyword">return</span> user;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>我们启动项目，查看：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525516714124.png" alt="1525516714124"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b404164bd42585.png" alt></p>
 <h1 id="6-Thymeleaf快速入门"><a href="#6-Thymeleaf快速入门" class="headerlink" title="6.Thymeleaf快速入门"></a>6.Thymeleaf快速入门</h1><p>SpringBoot并不推荐使用jsp，但是支持一些模板引擎技术：</p>
-<p><img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525517263421.png" alt="1525517263421"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b40c67f3a58214.png" alt></p>
 <p>以前大家用的比较多的是Freemarker，但是我们今天的主角是Thymeleaf！</p>
 <h2 id="6-1-为什么是Thymeleaf？"><a href="#6-1-为什么是Thymeleaf？" class="headerlink" title="6.1.为什么是Thymeleaf？"></a>6.1.为什么是Thymeleaf？</h2><p>简单说， Thymeleaf 是一个跟 Velocity、FreeMarker 类似的模板引擎，它可以完全替代 JSP 。相较与其他的模板引擎，它有如下三个极吸引人的特点：</p>
 <ul>
@@ -961,9 +960,9 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-thymeleaf<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>SpringBoot会自动为Thymeleaf注册一个视图解析器：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525522481007.png" alt="1525522481007"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b40447c3250178.png" alt></p>
 <p>与解析JSP的InternalViewResolver类似，Thymeleaf也会根据前缀和后缀来确定模板文件的位置：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525522811359.png" alt="1525522811359"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b40c4af0489274.png" alt></p>
 <ul>
 <li>默认前缀：<code>classpath:/templates/</code></li>
 <li>默认后缀：<code>.html</code></li>
@@ -971,7 +970,7 @@
 <p>所以如果我们返回视图：<code>users</code>，会指向到 <code>classpath:/templates/users.html</code></p>
 <p>一般我们无需进行修改，默认即可。</p>
 <h2 id="6-4-静态页面"><a href="#6-4-静态页面" class="headerlink" title="6.4.静态页面"></a>6.4.静态页面</h2><p>根据上面的文档介绍，模板默认放在classpath下的templates文件夹，我们新建一个html文件放入其中：</p>
-<p> <img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525521721279.png" alt="1525521721279"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b40c3024d23975.png" alt></p>
 <p>编写html模板，渲染模型中的数据：</p>
 <p>注意，把html 的名称空间，改成：<code>xmlns:th=&quot;http://www.thymeleaf.org&quot;</code> 会有语法提示</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">xmlns:th</span>=<span class="string">"http://www.thymeleaf.org"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>首页<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">        table &#123;border-collapse: collapse; font-size: 14px; width: 80%; margin: auto&#125;</span><br><span class="line">        table, th, td &#123;border: 1px solid darkslategray;padding: 10px&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"text-align: center"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">"color: darkslategray; font-size: 30px"</span>&gt;</span>欢迎光临！<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">hr</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">"list"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>id<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>用户名<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>年龄<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>性别<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>生日<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>备注<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span> <span class="attr">th:each</span>=<span class="string">"user : $&#123;users&#125;"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;user.id&#125;"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;user.name&#125;"</span>&gt;</span>张三<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;user.userName&#125;"</span>&gt;</span>zhangsan<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;user.age&#125;"</span>&gt;</span>20<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;user.sex&#125; == 1 ? '男': '女'"</span>&gt;</span>男<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;#dates.format(user.birthday, 'yyyy-MM-dd')&#125;"</span>&gt;</span>1980-02-30<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">"$&#123;user.note&#125;"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -990,7 +989,7 @@
 </li>
 </ul>
 <h2 id="6-5-测试"><a href="#6-5-测试" class="headerlink" title="6.5.测试"></a>6.5.测试</h2><p>接下来，我们打开页面测试一下：</p>
-<p><img src="D:%5CBaiduNetdiskDownload%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%5C%E4%B9%90%E4%BC%98%E5%95%86%E5%9F%8E%E3%80%8A%E9%A1%B9%E7%9B%AE%E7%AC%94%E8%AE%B0%E3%80%8B%5Cday01%E7%AC%94%E8%AE%B0%5Cassets/1525523911854.png" alt="1525523911854"></p>
+<p><img src="https://i.loli.net/2019/06/30/5d18b3f6e5aaf12826.png" alt></p>
 <h2 id="6-6-模板缓存"><a href="#6-6-模板缓存" class="headerlink" title="6.6.模板缓存"></a>6.6.模板缓存</h2><p>Thymeleaf会在第一次对模板解析之后进行缓存，极大的提高了并发处理能力。但是这给我们开发带来了不便，修改页面后并不会立刻看到效果，我们开发阶段可以关掉缓存使用：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 开发阶段关闭thymeleaf的模板缓存</span><br><span class="line">spring.thymeleaf.cache=false</span><br></pre></td></tr></table></figure>
 
@@ -1021,7 +1020,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Spring-Boot/" rel="tag"><i class="fa fa-tag"></i> Spring Boot</a>
+            <a href="/tags/SpringBoot/" rel="tag"><i class="fa fa-tag"></i> SpringBoot</a>
           
         </div>
       
@@ -1160,6 +1159,8 @@
                     
                       
                     
+                      
+                    
                     <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
@@ -1176,6 +1177,8 @@
                     
                   
                     
+                    
+                      
                     
                       
                     
