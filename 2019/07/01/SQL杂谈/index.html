@@ -96,20 +96,20 @@
 
 
 
-  <meta name="description" content="Mysql 中的 LIMIT SELECT * FROM table LIMIT 5,10; 可以记成前面有5个 往后检索10个 即检索的是6-15 ORDER BY 默认升序 降序DESCselect * from product order by name DESC 可以按照 单列 进行字母排序select * from product order by name ** 注：ORDER BY">
+  <meta name="description" content="** 知识来源《SQL必知必会》进行知识补充 ** Mysql 中的 LIMIT SELECT * FROM table LIMIT 5,10; 可以记成前面有5个 往后检索10个 即检索的是6-15 ORDER BY 默认升序 降序DESCselect * from product order by name DESC 可以按照 单列 进行字母排序select * from product or">
 <meta name="keywords" content="SQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQL知识杂谈">
 <meta property="og:url" content="http://yoursite.com/2019/07/01/SQL杂谈/index.html">
 <meta property="og:site_name" content="代码呱唧唧">
-<meta property="og:description" content="Mysql 中的 LIMIT SELECT * FROM table LIMIT 5,10; 可以记成前面有5个 往后检索10个 即检索的是6-15 ORDER BY 默认升序 降序DESCselect * from product order by name DESC 可以按照 单列 进行字母排序select * from product order by name ** 注：ORDER BY">
+<meta property="og:description" content="** 知识来源《SQL必知必会》进行知识补充 ** Mysql 中的 LIMIT SELECT * FROM table LIMIT 5,10; 可以记成前面有5个 往后检索10个 即检索的是6-15 ORDER BY 默认升序 降序DESCselect * from product order by name DESC 可以按照 单列 进行字母排序select * from product or">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/SQL%E6%9D%82%E8%B0%88/20190701115957559.png">
 <meta property="og:image" content="http://yoursite.com/SQL%E6%9D%82%E8%B0%88/20190701120033748.png">
-<meta property="og:updated_time" content="2019-07-01T04:06:13.767Z">
+<meta property="og:updated_time" content="2019-07-02T01:55:49.794Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL知识杂谈">
-<meta name="twitter:description" content="Mysql 中的 LIMIT SELECT * FROM table LIMIT 5,10; 可以记成前面有5个 往后检索10个 即检索的是6-15 ORDER BY 默认升序 降序DESCselect * from product order by name DESC 可以按照 单列 进行字母排序select * from product order by name ** 注：ORDER BY">
+<meta name="twitter:description" content="** 知识来源《SQL必知必会》进行知识补充 ** Mysql 中的 LIMIT SELECT * FROM table LIMIT 5,10; 可以记成前面有5个 往后检索10个 即检索的是6-15 ORDER BY 默认升序 降序DESCselect * from product order by name DESC 可以按照 单列 进行字母排序select * from product or">
 <meta name="twitter:image" content="http://yoursite.com/SQL%E6%9D%82%E8%B0%88/20190701115957559.png">
 
 
@@ -420,12 +420,24 @@
                 
               
 
-              <time title="创建时间：2019-07-01 10:57:58 / 修改时间：12:06:13" itemprop="dateCreated datePublished" datetime="2019-07-01T10:57:58+08:00">2019-07-01</time>
+              <time title="创建时间：2019-07-01 10:57:58" itemprop="dateCreated datePublished" datetime="2019-07-01T10:57:58+08:00">2019-07-01</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-02 09:55:49" itemprop="dateModified" datetime="2019-07-02T09:55:49+08:00">2019-07-02</time>
               
             
           </span>
@@ -490,7 +502,8 @@
       
 
       
-        <h2 id="Mysql-中的-LIMIT"><a href="#Mysql-中的-LIMIT" class="headerlink" title="Mysql 中的 LIMIT"></a>Mysql 中的 LIMIT</h2><p> <code>SELECT * FROM table LIMIT 5,10;</code><br> 可以记成前面有5个 往后检索10个<br> 即检索的是6-15</p>
+        <p>**<font color="red"> 知识来源《SQL必知必会》进行知识补充</font> **</p>
+<h2 id="Mysql-中的-LIMIT"><a href="#Mysql-中的-LIMIT" class="headerlink" title="Mysql 中的 LIMIT"></a>Mysql 中的 LIMIT</h2><p> <code>SELECT * FROM table LIMIT 5,10;</code><br> 可以记成前面有5个 往后检索10个<br> 即检索的是6-15</p>
 <h2 id="ORDER-BY"><a href="#ORDER-BY" class="headerlink" title="ORDER BY"></a>ORDER BY</h2><ul>
 <li>默认升序 降序<code>DESC</code><br><code>select * from product order by name DESC</code></li>
 <li>可以按照 单列 进行字母排序<br><code>select * from product order by name</code></li>
@@ -502,6 +515,7 @@
 <h2 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h2><p><code>IN</code> 操作符运算速度高于 <code>OR</code><br>尽量少使用通配符 <code>% _</code></p>
 <h2 id="拼接"><a href="#拼接" class="headerlink" title="拼接"></a>拼接</h2><p><code>SELECT * FROM tab_seller</code><br><img src="/SQL%E6%9D%82%E8%B0%88/20190701115957559.png" alt><br><code>SELECT CONCAT(sname,&#39;(&#39;,address,&#39;)&#39;) FROM tab_seller</code><br><img src="/SQL%E6%9D%82%E8%B0%88/20190701120033748.png" alt></p>
 <h2 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h2><p>最好使用AS 不要使用 空格<br><code>SELECT CONCAT(sname,&#39;(&#39;,address,&#39;)&#39;)  AS PINJIE FROM tab_seller</code></p>
+<h2 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h2><p>可以直接使用<code>select 3*2</code> 计算<br>可以使用<code>select now()</code> 查看当前时间</p>
 
       
     </div>
@@ -547,6 +561,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/02/算法基础-1.稀疏数组/" rel="prev" title="算法基础 1.稀疏数组">
+                算法基础 1.稀疏数组 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -621,7 +639,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-count">41</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -808,7 +826,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql-中的-LIMIT"><span class="nav-number">1.</span> <span class="nav-text">Mysql 中的 LIMIT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ORDER-BY"><span class="nav-number">2.</span> <span class="nav-text">ORDER BY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优先级"><span class="nav-number">3.</span> <span class="nav-text">优先级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能"><span class="nav-number">4.</span> <span class="nav-text">性能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拼接"><span class="nav-number">5.</span> <span class="nav-text">拼接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#别名"><span class="nav-number">6.</span> <span class="nav-text">别名</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql-中的-LIMIT"><span class="nav-number">1.</span> <span class="nav-text">Mysql 中的 LIMIT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ORDER-BY"><span class="nav-number">2.</span> <span class="nav-text">ORDER BY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优先级"><span class="nav-number">3.</span> <span class="nav-text">优先级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能"><span class="nav-number">4.</span> <span class="nav-text">性能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拼接"><span class="nav-number">5.</span> <span class="nav-text">拼接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#别名"><span class="nav-number">6.</span> <span class="nav-text">别名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算"><span class="nav-number">7.</span> <span class="nav-text">计算</span></a></li></ol></div>
             
 
           </div>

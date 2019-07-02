@@ -96,18 +96,22 @@
 
 
 
-  <meta name="description" content="源码流程分析 insert delete update三个方法在DefaultSession中 最后都调用的是update方法，所以在session方法中可以使用update实现CUD操作 使用动态代理会先创建代理实例，根据方法和sql语句判断执行哪一种方法 sqlSession.insert delete update select将获取到的结果，作为方法的返回值传递出去。   配置功能优化 p">
-<meta name="keywords" content="Mybatis,框架基础">
+  <meta name="description" content="基本介绍当一个数组中大部分元素为０，或者为同一个值的数组时，可以使用稀疏数组来保存该数组。稀疏数组的处理方法是: 记录数组一共有几行几列，有多少个不同的值把具有不同值的元素的行列及值记录在一个小规模的数组中，从而缩小程序的规模稀疏数组第一行记录 行 列 有效数接下来每行记录他所在的位置 及 所对应的值 举例说明有左图转换为右图 压缩数组  代码实现1234567891011121314151617">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mybatis 3.实现Dao层开发">
-<meta property="og:url" content="http://yoursite.com/2019/05/03/Mybatis-3.实现Dao层开发/index.html">
+<meta property="og:title" content="算法基础 1.稀疏数组">
+<meta property="og:url" content="http://yoursite.com/2019/07/02/算法基础-1.稀疏数组/index.html">
 <meta property="og:site_name" content="代码呱唧唧">
-<meta property="og:description" content="源码流程分析 insert delete update三个方法在DefaultSession中 最后都调用的是update方法，所以在session方法中可以使用update实现CUD操作 使用动态代理会先创建代理实例，根据方法和sql语句判断执行哪一种方法 sqlSession.insert delete update select将获取到的结果，作为方法的返回值传递出去。   配置功能优化 p">
+<meta property="og:description" content="基本介绍当一个数组中大部分元素为０，或者为同一个值的数组时，可以使用稀疏数组来保存该数组。稀疏数组的处理方法是: 记录数组一共有几行几列，有多少个不同的值把具有不同值的元素的行列及值记录在一个小规模的数组中，从而缩小程序的规模稀疏数组第一行记录 行 列 有效数接下来每行记录他所在的位置 及 所对应的值 举例说明有左图转换为右图 压缩数组  代码实现1234567891011121314151617">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-08T07:17:50.000Z">
+<meta property="og:image" content="https://i.loli.net/2019/07/02/5d1ad351b4d3a79756.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/02/5d1ad3519c6e775939.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/02/5d1ad3519c9d610289.png">
+<meta property="og:updated_time" content="2019-07-02T03:45:48.088Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mybatis 3.实现Dao层开发">
-<meta name="twitter:description" content="源码流程分析 insert delete update三个方法在DefaultSession中 最后都调用的是update方法，所以在session方法中可以使用update实现CUD操作 使用动态代理会先创建代理实例，根据方法和sql语句判断执行哪一种方法 sqlSession.insert delete update select将获取到的结果，作为方法的返回值传递出去。   配置功能优化 p">
+<meta name="twitter:title" content="算法基础 1.稀疏数组">
+<meta name="twitter:description" content="基本介绍当一个数组中大部分元素为０，或者为同一个值的数组时，可以使用稀疏数组来保存该数组。稀疏数组的处理方法是: 记录数组一共有几行几列，有多少个不同的值把具有不同值的元素的行列及值记录在一个小规模的数组中，从而缩小程序的规模稀疏数组第一行记录 行 列 有效数接下来每行记录他所在的位置 及 所对应的值 举例说明有左图转换为右图 压缩数组  代码实现1234567891011121314151617">
+<meta name="twitter:image" content="https://i.loli.net/2019/07/02/5d1ad351b4d3a79756.png">
 
 
 
@@ -115,7 +119,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/03/Mybatis-3.实现Dao层开发/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/02/算法基础-1.稀疏数组/">
 
 
 
@@ -125,7 +129,7 @@
   };
 </script>
 
-  <title>Mybatis 3.实现Dao层开发 | 代码呱唧唧</title>
+  <title>算法基础 1.稀疏数组 | 代码呱唧唧</title>
   
 
 
@@ -374,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/03/Mybatis-3.实现Dao层开发/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/02/算法基础-1.稀疏数组/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="代码呱唧唧">
@@ -391,7 +395,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Mybatis 3.实现Dao层开发
+          <h1 class="post-title" itemprop="name headline">算法基础 1.稀疏数组
 
               
             
@@ -417,24 +421,12 @@
                 
               
 
-              <time title="创建时间：2019-05-03 17:16:23" itemprop="dateCreated datePublished" datetime="2019-05-03T17:16:23+08:00">2019-05-03</time>
+              <time title="创建时间：2019-07-02 11:38:46 / 修改时间：11:45:48" itemprop="dateCreated datePublished" datetime="2019-07-02T11:38:46+08:00">2019-07-02</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-05-08 15:17:50" itemprop="dateModified" datetime="2019-05-08T15:17:50+08:00">2019-05-08</time>
               
             
           </span>
@@ -451,7 +443,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Mybatis/" itemprop="url" rel="index"><span itemprop="name">Mybatis</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/算法/" itemprop="url" rel="index"><span itemprop="name">算法</span></a></span>
 
                 
                 
@@ -470,8 +462,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/05/03/Mybatis-3.实现Dao层开发/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/05/03/Mybatis-3.实现Dao层开发/" itemprop="commentCount"></span>
+                <a href="/2019/07/02/算法基础-1.稀疏数组/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/02/算法基础-1.稀疏数组/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -499,31 +491,13 @@
       
 
       
-        <h2 id="源码流程分析"><a href="#源码流程分析" class="headerlink" title="源码流程分析"></a>源码流程分析</h2><ol>
-<li><code>insert delete update</code>三个方法在<code>DefaultSession</code>中 最后都<strong>调用的是<code>update</code>方法</strong>，所以在session方法中可以使用<code>update</code>实现<code>CUD</code>操作</li>
-<li>使用动态代理会先创建代理实例，根据方法和sql语句判断执行哪一种方法 <code>sqlSession.insert delete update select</code>将获取到的结果，作为方法的返回值传递出去。</li>
-</ol>
-<hr>
-<h2 id="配置功能优化"><a href="#配置功能优化" class="headerlink" title="配置功能优化"></a>配置功能优化</h2><hr>
-<p><code>properties</code>属性：</p>
-<ul>
-<li>主配置中定义属性标签 可以在标签内配置连接数据库信息 也可以通过属性引用外部配置文件<br> resource属性：用于指定配置文件位置 是按照类路径的写法来写,并且必须存在于类路径下<br> url属性：统一资源定位符 唯一表示资源位置 写法 协议 主机 端口 uri<br> <a href="http://localhost:8080/mybase/index.html" target="_blank" rel="noopener">http://localhost:8080/mybase/index.html</a><br> uri :统一资源标识符 应用中可以确定资源的唯一位置  file开头为文件协议 Window系统有省略</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">      <span class="tag">&lt;<span class="name">properties</span> <span class="attr">resource</span>=<span class="string">"JdbcConfig.properties"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;properties url="file:///C:/Users/CZQYY/IdeaProjects/Mybatis_study1/Day03_MybatisDao%E5%B1%82%E6%93%8D%E4%BD%9C/src/main/resources/JdbcConfig.properties"&gt;--&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br></pre></td></tr></table></figure>
+        <h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>当一个数组中大部分元素为０，或者为同一个值的数组时，可以使用稀疏数组来保存该数组。<br>稀疏数组的处理方法是: 记录数组一共有几行几列，有多少个不同的值<br>把具有不同值的元素的行列及值记录在一个小规模的数组中，从而缩小程序的规模<br>稀疏数组<br>第一行记录 行 列 有效数<br>接下来每行记录他所在的位置 及 所对应的值</p>
+<h2 id="举例说明"><a href="#举例说明" class="headerlink" title="举例说明"></a>举例说明</h2><p>有左图转换为右图 压缩数组</p>
+<p><img src="https://i.loli.net/2019/07/02/5d1ad351b4d3a79756.png" alt></p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 稀疏数组;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 创建11*11的数组 1 黑子 2白子</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SparseArr</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[][] oldArr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">11</span>][<span class="number">11</span>];</span><br><span class="line"><span class="comment">//       在第二行 第三列填黑子</span></span><br><span class="line">        oldArr[<span class="number">1</span>][<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="comment">//        在第三行 第四列填白子</span></span><br><span class="line">        oldArr[<span class="number">2</span>][<span class="number">3</span>] = <span class="number">2</span>;</span><br><span class="line">        System.out.println(<span class="string">"原始数组"</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] ints : oldArr) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> anInt : ints) &#123;</span><br><span class="line">                System.out.print(anInt + <span class="string">"\t"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//        获取稀疏数组</span></span><br><span class="line">        <span class="keyword">int</span>[][] sparseArr = getSparseArr(oldArr);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"稀疏数组"</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] ints : sparseArr) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> anInt : ints) &#123;</span><br><span class="line">                System.out.print(anInt + <span class="string">"\t"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//        将稀疏数组 改成原始数组</span></span><br><span class="line">        <span class="keyword">int</span>[][] getOldArr = getOldArr(sparseArr);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"稀疏数组转换原始数组"</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] ints : getOldArr) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> anInt : ints) &#123;</span><br><span class="line">                System.out.print(anInt + <span class="string">"\t"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 返回稀疏数组</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> oldArr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span>[][] getSparseArr(<span class="keyword">int</span>[][] oldArr) &#123;</span><br><span class="line"><span class="comment">//      获取有效数组个数,获取行数列数</span></span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>; <span class="comment">// 有效数</span></span><br><span class="line">        <span class="keyword">int</span> row = oldArr.length; <span class="comment">//行数</span></span><br><span class="line">        <span class="keyword">int</span> col = oldArr[<span class="number">1</span>].length; <span class="comment">//列数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//        获取有效数</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span>[] ints : oldArr) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> anInt : ints) &#123;</span><br><span class="line">                <span class="keyword">if</span> (anInt != <span class="number">0</span>) &#123;</span><br><span class="line">                    sum++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//        创建稀疏数组</span></span><br><span class="line">        <span class="keyword">int</span>[][] sparseArr = <span class="keyword">new</span> <span class="keyword">int</span>[sum + <span class="number">1</span>][<span class="number">3</span>];</span><br><span class="line"><span class="comment">//        第一行储存数组几行几列 有几个有效值</span></span><br><span class="line">        sparseArr[<span class="number">0</span>][<span class="number">0</span>] = row;</span><br><span class="line">        sparseArr[<span class="number">0</span>][<span class="number">1</span>] = col;</span><br><span class="line">        sparseArr[<span class="number">0</span>][<span class="number">2</span>] = sum;</span><br><span class="line"><span class="comment">//       将 值 和所对应的的行列填入 稀疏数组</span></span><br><span class="line"><span class="comment">//        创建指针确定存入稀疏数组的行数</span></span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; row; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; col; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (oldArr[i][j] != <span class="number">0</span>) &#123;</span><br><span class="line">                    a++;</span><br><span class="line">                    sparseArr[a][<span class="number">0</span>] = i;</span><br><span class="line">                    sparseArr[a][<span class="number">1</span>] = j;</span><br><span class="line">                    sparseArr[a][<span class="number">2</span>] = oldArr[i][j];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> sparseArr;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 获取原始数组</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> sparseArr</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span>[][] getOldArr(<span class="keyword">int</span>[][] sparseArr) &#123;</span><br><span class="line"><span class="comment">//        根据稀疏数组存储的行列 创建新数组</span></span><br><span class="line">        <span class="keyword">int</span>[][] ordArr = <span class="keyword">new</span> <span class="keyword">int</span>[sparseArr[<span class="number">0</span>][<span class="number">0</span>]][sparseArr[<span class="number">0</span>][<span class="number">1</span>]];</span><br><span class="line"><span class="comment">//        根据有效值个数决定 循环几次 复制给原始数组</span></span><br><span class="line"><span class="comment">//        从第二行开始循环 对相应位置的原始数组进行赋值</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= sparseArr[<span class="number">0</span>][<span class="number">2</span>]; i++) &#123;</span><br><span class="line">           ordArr[sparseArr[i][<span class="number">0</span>]][sparseArr[i][<span class="number">1</span>]]=sparseArr[i][<span class="number">2</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ordArr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>配置环境中的代码更改为</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">"mysql"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">"mysql"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">"JDBC"</span>&gt;</span><span class="tag">&lt;/<span class="name">transactionManager</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">"POOLED"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driver"</span> <span class="attr">value</span>=<span class="string">"$&#123;driver&#125;"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"$&#123;url&#125;"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"$&#123;username&#125;"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"$&#123;password&#125;"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">environments</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h2><p><img src="https://i.loli.net/2019/07/02/5d1ad3519c6e775939.png" alt><br><img src="https://i.loli.net/2019/07/02/5d1ad3519c9d610289.png" alt></p>
 
-<p>使用typeAlias配置别名 他只能配置domain中类的别名<br>通过包配置 可以省略包括子配置文件中的全类名 别名为全小写类名<br>   <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"it.test.domain"</span>/&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">typeAliases</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<hr>
-<p>UserDaoImpl类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> it.test.impl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> it.test.dao.UserDao;</span><br><span class="line"><span class="keyword">import</span> it.test.domain.User;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.session.SqlSession;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserDaoImpl</span> <span class="keyword">implements</span> <span class="title">UserDao</span> </span>&#123;</span><br><span class="line">   SqlSession session=<span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UserDaoImpl</span><span class="params">(SqlSession session)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.session = session;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">findAll</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="comment">//        参数是获取配置信息的key nameSpace.id</span></span><br><span class="line">        List&lt;User&gt; list = session.selectList(<span class="string">"it.test.dao.UserDao.findAll"</span>);</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//    insert delete update</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">count</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Object o = session.selectOne(<span class="string">"it.test.dao.UserDao.count"</span>);</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>) o;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>JdbcConfig.properties</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">driver=com.mysql.jdbc.Driver</span><br><span class="line">url=jdbc:mysql://localhost:3306/test</span><br><span class="line">username=root</span><br><span class="line">password=root</span><br></pre></td></tr></table></figure>
-
-<p>SqlMapConfig.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE configuration</span></span><br><span class="line"><span class="meta">        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"</span></span><br><span class="line"><span class="meta">        "http://mybatis.org/dtd/mybatis-3-config.dtd"&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--主配置文件--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--主配置中定义属性标签--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--可以在标签内配置连接数据库信息 也可以通过属性引用外部配置文件</span></span><br><span class="line"><span class="comment">    resource属性：用于指定配置文件位置 是按照类路径的写法来写,并且必须存在于类路径下</span></span><br><span class="line"><span class="comment">    url属性：统一资源定位符 唯一表示资源位置 写法 协议 主机 端口 uri</span></span><br><span class="line"><span class="comment">    http://localhost:8080/mybase/index.html</span></span><br><span class="line"><span class="comment">    uri :统一资源标识符 应用中可以确定资源的唯一位置  file开头为文件协议 Window系统有省略--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span> <span class="attr">resource</span>=<span class="string">"JdbcConfig.properties"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    &lt;properties url="file:///C:/Users/CZQYY/IdeaProjects/Mybatis_study1/Day03_MybatisDao%E5%B1%82%E6%93%8D%E4%BD%9C/src/main/resources/JdbcConfig.properties"&gt;--&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    使用typeAlias配置别名 他只能配置domain中类的别名</span></span><br><span class="line"><span class="comment">通过包配置 可以省略包括子配置文件中的全类名 只是用类名即可--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">typeAliases</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">package</span> <span class="attr">name</span>=<span class="string">"it.test.domain"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">typeAliases</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--    配置环境--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">environments</span> <span class="attr">default</span>=<span class="string">"mysql"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">environment</span> <span class="attr">id</span>=<span class="string">"mysql"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">transactionManager</span> <span class="attr">type</span>=<span class="string">"JDBC"</span>&gt;</span><span class="tag">&lt;/<span class="name">transactionManager</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">"POOLED"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driver"</span> <span class="attr">value</span>=<span class="string">"$&#123;driver&#125;"</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"$&#123;url&#125;"</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"$&#123;username&#125;"</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"$&#123;password&#125;"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">environment</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">environments</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mappers</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        注解配置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">class</span>=<span class="string">"it.test.dao.UserDao"</span>&gt;</span><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--        xml配置--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">mapper</span> <span class="attr">resource</span>=<span class="string">"it/test/dao/UserDao.xml"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mappers</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -546,9 +520,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Mybatis/" rel="tag"><i class="fa fa-tag"></i> Mybatis</a>
-          
-            <a href="/tags/框架基础/" rel="tag"><i class="fa fa-tag"></i> 框架基础</a>
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
           
         </div>
       
@@ -561,8 +533,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/03/Hexo设置/" rel="next" title="Hexo设置">
-                <i class="fa fa-chevron-left"></i> Hexo设置
+              <a href="/2019/07/01/SQL杂谈/" rel="next" title="SQL知识杂谈">
+                <i class="fa fa-chevron-left"></i> SQL知识杂谈
               </a>
             
           </div>
@@ -570,10 +542,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/04/Mybatis-4.Mybatis中连接池以及事务控制，多表操作/" rel="prev" title="Mybatis 4.Mybatis中连接池以及事务控制，多表操作">
-                Mybatis 4.Mybatis中连接池以及事务控制，多表操作 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -835,7 +803,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#源码流程分析"><span class="nav-number">1.</span> <span class="nav-text">源码流程分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置功能优化"><span class="nav-number">2.</span> <span class="nav-text">配置功能优化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本介绍"><span class="nav-number">1.</span> <span class="nav-text">基本介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#举例说明"><span class="nav-number">2.</span> <span class="nav-text">举例说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">3.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出结果"><span class="nav-number">4.</span> <span class="nav-text">输出结果</span></a></li></ol></div>
             
 
           </div>
