@@ -106,7 +106,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/05/07/5cd1658bc57af.png">
 <meta property="og:image" content="https://i.loli.net/2019/05/08/5cd23427d86c1.png">
-<meta property="og:updated_time" content="2019-05-08T03:16:46.000Z">
+<meta property="og:updated_time" content="2019-07-02T10:54:33.534Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring 1.Spring入门思想 Bean">
 <meta name="twitter:description" content="Spring 体系结构Spring简介 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Spring框架是由于软件开发的复杂性而创建的。Spring使用的是基本的JavaBean来完成以前只可能由EJB完成的事情。然而，Spring的用途不仅仅限于服务器端的开发。从简单性、可测试性和松耦合性角度而言，绝大部分Java应用都可以从Spring中受益。 ![](ht">
@@ -437,7 +437,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-05-08 11:16:46" itemprop="dateModified" datetime="2019-05-08T11:16:46+08:00">2019-05-08</time>
+                <time title="修改时间：2019-07-02 18:54:33" itemprop="dateModified" datetime="2019-07-02T18:54:33+08:00">2019-07-02</time>
               
             
           </span>
@@ -504,8 +504,8 @@
       
         <h2 id="Spring-体系结构"><a href="#Spring-体系结构" class="headerlink" title="Spring 体系结构"></a>Spring 体系结构</h2><h3 id="Spring简介"><a href="#Spring简介" class="headerlink" title="Spring简介"></a>Spring简介</h3> <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Spring框架是由于软件开发的复杂性而创建的。Spring使用的是基本的JavaBean来完成以前只可能由EJB完成的事情。然而，Spring的用途不仅仅限于服务器端的开发。从简单性、可测试性和松耦合性角度而言，绝大部分Java应用都可以从Spring中受益。</p>
 ![](https://i.loli.net/2019/05/06/5ccfe88cdd826.png)
-`Core Container` Spring核心容器 IOC
 
+<p><code>Core Container</code> Spring核心容器 IOC</p>
 <hr>
 <h2 id="耦合"><a href="#耦合" class="headerlink" title="耦合"></a>耦合</h2><p>耦合：类或者方法之间存在编译依赖<br>数据库连接：<br><code>DriverManager.registerDriver(new com.mysql.jdbc.Driver())</code><br>如果不添加驱动 则会报出编译时异常 证明了类之间的依赖关系很大<br>如果使用<code>Class.forName()</code>注册驱动 则可以降低程序间耦合 解耦<br>解耦思想： ** 降低程序间的依赖关系**
 实际开发中应做到：*<em>编译期不依赖 运行期依赖 *</em><br>类之间耦合<br>通过反射来创建对象 避免出现<code>new</code>关键字<br>通过读取配置文件来获取创建的对象的全限定类名</p>
