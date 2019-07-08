@@ -109,7 +109,8 @@
 <meta property="og:image" content="https://i.loli.net/2019/07/02/5d1ad3519c9d610289.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/02/5d1b219e9844e66640.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/02/5d1b219e67ce210198.png">
-<meta property="og:updated_time" content="2019-07-02T09:39:00.087Z">
+<meta property="og:image" content="http://yoursite.com/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80-1.%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%EF%BC%8C%E9%98%9F%E5%88%97/20190702081556716.png">
+<meta property="og:updated_time" content="2019-07-04T14:04:32.902Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法基础 1.稀疏数组，队列">
 <meta name="twitter:description" content="稀疏数组基本介绍当一个数组中大部分元素为０，或者为同一个值的数组时，可以使用稀疏数组来保存该数组。稀疏数组的处理方法是: 记录数组一共有几行几列，有多少个不同的值把具有不同值的元素的行列及值记录在一个小规模的数组中，从而缩小程序的规模稀疏数组第一行记录 行 列 有效数接下来每行记录他所在的位置 及 所对应的值 举例说明有左图转换为右图 压缩数组  代码实现123456789101112131415">
@@ -423,12 +424,24 @@
                 
               
 
-              <time title="创建时间：2019-07-02 11:38:46 / 修改时间：17:39:00" itemprop="dateCreated datePublished" datetime="2019-07-02T11:38:46+08:00">2019-07-02</time>
+              <time title="创建时间：2019-07-02 11:38:46" itemprop="dateCreated datePublished" datetime="2019-07-02T11:38:46+08:00">2019-07-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-04 22:04:32" itemprop="dateModified" datetime="2019-07-04T22:04:32+08:00">2019-07-04</time>
               
             
           </span>
@@ -500,7 +513,7 @@
 
 <h3 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h3><p><img src="https://i.loli.net/2019/07/02/5d1ad3519c6e775939.png" alt><br><img src="https://i.loli.net/2019/07/02/5d1ad3519c9d610289.png" alt></p>
 <hr>
-<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>队列是一种特殊的线性表，特殊之处在于它只允许在表的前端（front）进行删除操作，而在表的后端（rear）进行插入操作，和栈一样，队列是一种操作受限制的线性表。<strong>进行插入操作的端称为队尾，行删除操作的端称为队头。</strong> ** 队列中没有元素时，称为空队列。**</p>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>队列是一种特殊的线性表，特殊之处在于它只允许在表的前端（front）进行删除操作，而在表的后端（rear）进行插入操作，和栈一样，队列是一种操作受限制的线性表。<strong>进行插入操作的端称为队尾，行删除操作的端称为队头。</strong><br>** 队列中没有元素时，称为空队列。**</p>
 <p>** 每次添加操作 要判断一次 数组是否满 每次获取时 要判断数组是否为空 **</p>
 <h3 id="非循环队列"><a href="#非循环队列" class="headerlink" title="非循环队列"></a>非循环队列</h3><h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>添加 尾部指针 p_back<br><strong>判断空队列：如果尾部指针等于 p_start 则数组为空 **
 **添加元素移动头部指针  获取元素移动尾指针</strong><br>** 头指针+1 等于 数组长度时 数组满**
@@ -509,6 +522,7 @@
 <h5 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 队列入门.非循环队列;</span><br><span class="line"><span class="comment">/*  数组情况 添加 尾部指针 p_back 如果尾部指针等于 p_start 则数组为空</span></span><br><span class="line"><span class="comment">    添加元素动头部指针  获取元素动尾指针</span></span><br><span class="line"><span class="comment">     头指针+1 等于 数组长度时 数组满</span></span><br><span class="line"><span class="comment">* */</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CreateQueue</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        MyQueue q = <span class="keyword">new</span> MyQueue();</span><br><span class="line">        q.addQueue(<span class="number">5</span>);</span><br><span class="line">        q.addQueue(<span class="number">3</span>);</span><br><span class="line">        <span class="keyword">if</span> (q.isEmpty() == <span class="keyword">false</span>) &#123;</span><br><span class="line"><span class="comment">//            此时指针是0 获取 第一个元素5</span></span><br><span class="line">            System.out.println(q.Front());</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//        删除元素 -指针后移</span></span><br><span class="line">        q.deQueue();</span><br><span class="line">        <span class="keyword">if</span> (q.isEmpty() == <span class="keyword">false</span>) &#123;</span><br><span class="line"><span class="comment">//            此时指针是1 获取第二个元素</span></span><br><span class="line">            System.out.println(q.Front());</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line">        q.deQueue();</span><br><span class="line">        <span class="keyword">if</span> (q.isEmpty() == <span class="keyword">false</span>) &#123;</span><br><span class="line">            System.out.println(q.Front());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyQueue</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> List&lt;Integer&gt; data;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设定一个开始指针</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> p_start;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 构造方法创建一个ArrayList实例 给指针赋值0</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        data = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        p_start = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/** 添加元素 */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">addQueue</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        data.add(x);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">/** 去掉一个元素</span></span><br><span class="line"><span class="comment">     *  其实并没有真的删除元素 只是操作指针向前移动 */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">deQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (isEmpty() == <span class="keyword">true</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        p_start++;</span><br><span class="line">        System.out.println(<span class="string">"此时指针变为"</span>+p_start);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/** 获取元素. */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Front</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> data.get(p_start);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/** 如果指针数大于等于队列长度 对列为空 */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">boolean</span> flag= p_start &gt;= data.size();</span><br><span class="line">        <span class="keyword">if</span> (flag==<span class="keyword">true</span>)&#123;</span><br><span class="line">            System.out.println(<span class="string">"集合中没有数据"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"集合有数据 可以取出"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><p><img src="https://i.loli.net/2019/07/02/5d1b219e67ce210198.png" alt></p>
+<h3 id="循环队列"><a href="#循环队列" class="headerlink" title="循环队列"></a>循环队列</h3><p><img src="/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80-1.%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84%EF%BC%8C%E9%98%9F%E5%88%97/20190702081556716.png" alt><br>判断空 当头指针和尾指针相等<br>判断满 满的时候尾指针一定走完一圈 所以(尾指针+1)%maxSize=头指针<br>如果一圈放六个 头指针在第1个 尾指针在第6个 满足公式</p>
 
       
     </div>
@@ -545,7 +559,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/01/SQL杂谈/" rel="next" title="SQL知识杂谈">
+              <a href="/2019/07/01/SQL知识杂谈/" rel="next" title="SQL知识杂谈">
                 <i class="fa fa-chevron-left"></i> SQL知识杂谈
               </a>
             
@@ -554,6 +568,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/04/牛客网面试错题集-3/" rel="prev" title="牛客网面试错题集 3">
+                牛客网面试错题集 3 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -628,7 +646,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -673,7 +691,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -728,7 +746,7 @@
                     
                       
                     
-                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -815,7 +833,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#稀疏数组"><span class="nav-number">1.</span> <span class="nav-text">稀疏数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本介绍"><span class="nav-number">1.1.</span> <span class="nav-text">基本介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#举例说明"><span class="nav-number">1.2.</span> <span class="nav-text">举例说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">1.3.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出结果"><span class="nav-number">1.4.</span> <span class="nav-text">输出结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#队列"><span class="nav-number">2.</span> <span class="nav-text">队列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#非循环队列"><span class="nav-number">2.1.</span> <span class="nav-text">非循环队列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组"><span class="nav-number">2.1.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ArrayList"><span class="nav-number">2.1.2.</span> <span class="nav-text">ArrayList</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#代码实现-1"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">代码实现</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结果"><span class="nav-number">2.1.3.</span> <span class="nav-text">结果</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#稀疏数组"><span class="nav-number">1.</span> <span class="nav-text">稀疏数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本介绍"><span class="nav-number">1.1.</span> <span class="nav-text">基本介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#举例说明"><span class="nav-number">1.2.</span> <span class="nav-text">举例说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">1.3.</span> <span class="nav-text">代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出结果"><span class="nav-number">1.4.</span> <span class="nav-text">输出结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#队列"><span class="nav-number">2.</span> <span class="nav-text">队列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#非循环队列"><span class="nav-number">2.1.</span> <span class="nav-text">非循环队列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#数组"><span class="nav-number">2.1.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ArrayList"><span class="nav-number">2.1.2.</span> <span class="nav-text">ArrayList</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#代码实现-1"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">代码实现</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结果"><span class="nav-number">2.1.3.</span> <span class="nav-text">结果</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环队列"><span class="nav-number">2.2.</span> <span class="nav-text">循环队列</span></a></li></ol></li></ol></div>
             
 
           </div>
