@@ -100,16 +100,16 @@
 <meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot 1.SpringBoot入门 -实现版">
-<meta property="og:url" content="http://yoursite.com/2019/07/09/SpringBoot入门/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/07/09/SpringBoot-1.SpringBoot入门--实现版/index.html">
 <meta property="og:site_name" content="代码呱唧唧">
 <meta property="og:description" content="spring boot 版本号 2.0.4 常用注解@SpringBootApplicationSpringBoot主配置类 配置后Spring会扫描当前包及子包的文件并加入Spring容器中所以主配置类不要放入单独的包中 @MapperScan(&amp;quot;it.test.mapper&amp;quot;) 配置扫描Mapper对象 即没有实现类 只有接口的Dao对象 @Configuration配置类">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/SpringBoot%E5%85%A5%E9%97%A8/20190709085730062.png">
-<meta property="og:updated_time" content="2019-07-09T12:58:55.632Z">
+<meta property="og:image" content="https://i.loli.net/2019/07/10/5d2540ea61d7b25537.png">
+<meta property="og:updated_time" content="2019-07-10T01:35:46.808Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot 1.SpringBoot入门 -实现版">
 <meta name="twitter:description" content="spring boot 版本号 2.0.4 常用注解@SpringBootApplicationSpringBoot主配置类 配置后Spring会扫描当前包及子包的文件并加入Spring容器中所以主配置类不要放入单独的包中 @MapperScan(&amp;quot;it.test.mapper&amp;quot;) 配置扫描Mapper对象 即没有实现类 只有接口的Dao对象 @Configuration配置类">
-<meta name="twitter:image" content="http://yoursite.com/SpringBoot%E5%85%A5%E9%97%A8/20190709085730062.png">
+<meta name="twitter:image" content="https://i.loli.net/2019/07/10/5d2540ea61d7b25537.png">
 
 
 
@@ -117,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/07/09/SpringBoot入门/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/09/SpringBoot-1.SpringBoot入门--实现版/">
 
 
 
@@ -376,7 +376,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/09/SpringBoot入门/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/09/SpringBoot-1.SpringBoot入门--实现版/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="代码呱唧唧">
@@ -419,12 +419,24 @@
                 
               
 
-              <time title="创建时间：2019-07-09 16:39:46 / 修改时间：20:58:55" itemprop="dateCreated datePublished" datetime="2019-07-09T16:39:46+08:00">2019-07-09</time>
+              <time title="创建时间：2019-07-09 16:39:46" itemprop="dateCreated datePublished" datetime="2019-07-09T16:39:46+08:00">2019-07-09</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-10 09:35:46" itemprop="dateModified" datetime="2019-07-10T09:35:46+08:00">2019-07-10</time>
               
             
           </span>
@@ -460,8 +472,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/07/09/SpringBoot入门/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/09/SpringBoot入门/" itemprop="commentCount"></span>
+                <a href="/2019/07/09/SpringBoot-1.SpringBoot入门--实现版/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/09/SpringBoot-1.SpringBoot入门--实现版/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -510,7 +522,7 @@
 
 <h2 id="domain"><a href="#domain" class="headerlink" title="domain"></a>domain</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"><span class="keyword">import</span> tk.mybatis.mapper.annotation.KeySql;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.Id;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.Table;</span><br><span class="line"><span class="keyword">import</span> javax.persistence.Transient;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@Table</span>(name = <span class="string">"tab_seller"</span>) <span class="comment">// 对应的表</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Seller</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Id</span> <span class="comment">// 主键</span></span><br><span class="line">    <span class="meta">@KeySql</span>(useGeneratedKeys = <span class="keyword">true</span>) <span class="comment">// 自增</span></span><br><span class="line">    <span class="keyword">private</span> Integer sid;</span><br><span class="line">    <span class="keyword">private</span> String sname;</span><br><span class="line">    <span class="keyword">private</span> String consphone;</span><br><span class="line">    <span class="keyword">private</span> String address;</span><br><span class="line">    <span class="meta">@Transient</span> <span class="comment">// 不需要持久化</span></span><br><span class="line">    <span class="keyword">private</span> String sex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="静态文件"><a href="#静态文件" class="headerlink" title="静态文件"></a>静态文件</h2><p><img src="/SpringBoot%E5%85%A5%E9%97%A8/20190709085730062.png" alt><br>或者命名为<code>public</code></p>
+<h2 id="静态文件"><a href="#静态文件" class="headerlink" title="静态文件"></a>静态文件</h2><p><img src="https://i.loli.net/2019/07/10/5d2540ea61d7b25537.png" alt><br>或者命名为<code>public</code></p>
 
       
     </div>
