@@ -96,25 +96,27 @@
 
 
 
-  <meta name="description" content="Hystix熔断器 (电路短路 立刻熔断 防止发生用电火灾) 一般作用于消费者Hystix是Netflix开源的一个延迟和容错库，用于隔离访问远程服务、第三方库，防止出现级联失败。 事故原理分析正常的微服务项目如果出现了其中一个服务故障 则会出现阻塞服务器现象如果好多人同时访问这个功能 则会造成服务器饱和 服务器就不工作了 Hystix功能防止任何单个依赖项耗尽所有容器（如Tomcat）用户线程。">
+  <meta name="description" content="Hystix熔断器 (电路短路 立刻熔断 防止发生用电火灾) 一般作用于消费者Hystix是Netflix开源的一个延迟和容错库，用于隔离访问远程服务、第三方库，防止出现级联失败。 雪崩问题分析正常的微服务项目如果出现了其中一个服务故障 则会出现阻塞服务器现象如果好多人同时访问这个功能 则会造成服务器饱和 服务器就不工作了 Hystix功能防止任何单个依赖项耗尽所有容器（如Tomcat）用户线程。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringCloud 2.Hystix">
-<meta property="og:url" content="http://yoursite.com/2019/07/12/SpringCloud/index.html">
+<meta property="og:title" content="SpringCloud 2.Hystix Fiegn">
+<meta property="og:url" content="http://yoursite.com/2019/07/12/SpringCloud-2.Hystix-Fiegn/index.html">
 <meta property="og:site_name" content="代码呱唧唧">
-<meta property="og:description" content="Hystix熔断器 (电路短路 立刻熔断 防止发生用电火灾) 一般作用于消费者Hystix是Netflix开源的一个延迟和容错库，用于隔离访问远程服务、第三方库，防止出现级联失败。 事故原理分析正常的微服务项目如果出现了其中一个服务故障 则会出现阻塞服务器现象如果好多人同时访问这个功能 则会造成服务器饱和 服务器就不工作了 Hystix功能防止任何单个依赖项耗尽所有容器（如Tomcat）用户线程。">
+<meta property="og:description" content="Hystix熔断器 (电路短路 立刻熔断 防止发生用电火灾) 一般作用于消费者Hystix是Netflix开源的一个延迟和容错库，用于隔离访问远程服务、第三方库，防止出现级联失败。 雪崩问题分析正常的微服务项目如果出现了其中一个服务故障 则会出现阻塞服务器现象如果好多人同时访问这个功能 则会造成服务器饱和 服务器就不工作了 Hystix功能防止任何单个依赖项耗尽所有容器（如Tomcat）用户线程。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/07/12/5d27fe69b968b44151.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/12/5d27fe69cb0c780731.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/12/5d27fe69cc33c86595.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/12/5d27fe69d2cbb94934.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/12/5d27fe69beb6787967.png">
-<meta property="og:image" content="http://yoursite.com/SpringCloud/20190712122727171.png">
-<meta property="og:image" content="http://yoursite.com/SpringCloud/20190712122854741.png">
-<meta property="og:image" content="http://yoursite.com/SpringCloud/20190712122918328.png">
-<meta property="og:updated_time" content="2019-07-12T05:32:39.081Z">
+<meta property="og:image" content="https://i.loli.net/2019/07/12/5d2831b49483172943.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/12/5d2831b4a189d91489.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/12/5d2831b475a9968196.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/12/5d2831b53883846925.png">
+<meta property="og:image" content="http://yoursite.com/SpringCloud-2.Hystix-Fiegn/20190712043446099.png">
+<meta property="og:updated_time" content="2019-07-12T08:53:50.805Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SpringCloud 2.Hystix">
-<meta name="twitter:description" content="Hystix熔断器 (电路短路 立刻熔断 防止发生用电火灾) 一般作用于消费者Hystix是Netflix开源的一个延迟和容错库，用于隔离访问远程服务、第三方库，防止出现级联失败。 事故原理分析正常的微服务项目如果出现了其中一个服务故障 则会出现阻塞服务器现象如果好多人同时访问这个功能 则会造成服务器饱和 服务器就不工作了 Hystix功能防止任何单个依赖项耗尽所有容器（如Tomcat）用户线程。">
+<meta name="twitter:title" content="SpringCloud 2.Hystix Fiegn">
+<meta name="twitter:description" content="Hystix熔断器 (电路短路 立刻熔断 防止发生用电火灾) 一般作用于消费者Hystix是Netflix开源的一个延迟和容错库，用于隔离访问远程服务、第三方库，防止出现级联失败。 雪崩问题分析正常的微服务项目如果出现了其中一个服务故障 则会出现阻塞服务器现象如果好多人同时访问这个功能 则会造成服务器饱和 服务器就不工作了 Hystix功能防止任何单个依赖项耗尽所有容器（如Tomcat）用户线程。">
 <meta name="twitter:image" content="https://i.loli.net/2019/07/12/5d27fe69b968b44151.png">
 
 
@@ -123,7 +125,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/07/12/SpringCloud/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/12/SpringCloud-2.Hystix-Fiegn/">
 
 
 
@@ -133,7 +135,7 @@
   };
 </script>
 
-  <title>SpringCloud 2.Hystix | 代码呱唧唧</title>
+  <title>SpringCloud 2.Hystix Fiegn | 代码呱唧唧</title>
   
 
 
@@ -382,7 +384,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/12/SpringCloud/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/12/SpringCloud-2.Hystix-Fiegn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="代码呱唧唧">
@@ -399,7 +401,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SpringCloud 2.Hystix
+          <h1 class="post-title" itemprop="name headline">SpringCloud 2.Hystix Fiegn
 
               
             
@@ -425,7 +427,7 @@
                 
               
 
-              <time title="创建时间：2019-07-12 11:17:13 / 修改时间：13:32:39" itemprop="dateCreated datePublished" datetime="2019-07-12T11:17:13+08:00">2019-07-12</time>
+              <time title="创建时间：2019-07-12 11:17:13 / 修改时间：16:53:50" itemprop="dateCreated datePublished" datetime="2019-07-12T11:17:13+08:00">2019-07-12</time>
             
 
             
@@ -448,8 +450,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/07/12/SpringCloud/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/12/SpringCloud/" itemprop="commentCount"></span>
+                <a href="/2019/07/12/SpringCloud-2.Hystix-Fiegn/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/07/12/SpringCloud-2.Hystix-Fiegn/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -478,9 +480,10 @@
 
       
         <h2 id="Hystix"><a href="#Hystix" class="headerlink" title="Hystix"></a>Hystix</h2><p>熔断器 (电路短路 立刻熔断 防止发生用电火灾) 一般作用于消费者<br><code>Hystix</code>是<code>Netflix</code>开源的一个延迟和容错库，用于隔离访问远程服务、第三方库，防止出现级联失败。<br><img src="https://i.loli.net/2019/07/12/5d27fe69b968b44151.png" alt></p>
-<h3 id="事故原理分析"><a href="#事故原理分析" class="headerlink" title="事故原理分析"></a>事故原理分析</h3><p>正常的微服务项目<br><img src="https://i.loli.net/2019/07/12/5d27fe69cb0c780731.png" alt><br>如果出现了其中一个服务故障 则会出现阻塞服务器现象<br><img src="https://i.loli.net/2019/07/12/5d27fe69cc33c86595.png" alt><br>如果好多人同时访问这个功能 则会造成服务器饱和 服务器就不工作了<br><img src="https://i.loli.net/2019/07/12/5d27fe69d2cbb94934.png" alt></p>
+<h3 id="雪崩问题分析"><a href="#雪崩问题分析" class="headerlink" title="雪崩问题分析"></a>雪崩问题分析</h3><p>正常的微服务项目<br><img src="https://i.loli.net/2019/07/12/5d27fe69cb0c780731.png" alt><br>如果出现了其中一个服务故障 则会出现阻塞服务器现象<br><img src="https://i.loli.net/2019/07/12/5d27fe69cc33c86595.png" alt><br>如果好多人同时访问这个功能 则会造成服务器饱和 服务器就不工作了<br><img src="https://i.loli.net/2019/07/12/5d27fe69d2cbb94934.png" alt></p>
 <h3 id="Hystix功能"><a href="#Hystix功能" class="headerlink" title="Hystix功能"></a>Hystix功能</h3><p>防止任何单个依赖项<strong>耗尽所有容器（如Tomcat）用户线程。</strong><br>甩掉包袱，<strong>快速失败</strong>而不是排队<br>在任何可行的地方提供回退，以保护用户不受失败的影响。<br>使用隔离技术（如隔离板、泳道和断路器模式）来限制任何一个依赖项的影响。<br>通过近实时的度量、监视和警报来优化发现时间。<br>通过配置的低延迟传播来优化恢复时间。<br>支持对Hystrix的大多数方面的动态属性更改，允许使用低延迟反馈循环进行实时操作修改。<br>避免在整个依赖客户端执行中出现故障，而不仅仅是在网络流量中。</p>
-<h3 id="Hystix如何实现"><a href="#Hystix如何实现" class="headerlink" title="Hystix如何实现"></a>Hystix如何实现</h3><p>用一个<code>HystrixCommand</code>或者 <code>HystrixObservableCommand</code> （这是命令模式的一个例子）包装所有的对外部系统（或者依赖）的调用，典型地它们在一个单独的线程中执行<br><strong>调用超时时间</strong>比你自己定义的阈值要长。有一个默认值，对于大多数的依赖项你是可以自定义超时时间的。<br><strong>为每个依赖项维护一个小的线程池(或信号量)；如果线程池满了，那么该依赖性将会立即拒绝请求，而不是排队。</strong><br>调用的结果有这么几种：成功、失败（客户端抛出异常）、超时、拒绝。<br>在一段时间内，如果服务的错误百分比超过了一个阈值，就会触发一个断路器来停止对特定服务的所有请求，无论是手动的还是自动的。<br>当请求失败、被拒绝、超时或短路时，执行回退逻辑。<br><img src="https://i.loli.net/2019/07/12/5d27fe69beb6787967.png" alt><br><strong>具体原理查询 作者：废物大师兄 <a href="https://www.cnblogs.com/cjsblog/p/9395584.html" target="_blank" rel="noopener">Hystrix是如何工作的</a></strong></p>
+<h3 id="Hystix如何实现-线程隔离和服务降级"><a href="#Hystix如何实现-线程隔离和服务降级" class="headerlink" title="Hystix如何实现 线程隔离和服务降级"></a>Hystix如何实现 线程隔离和服务降级</h3><p>线程隔离是内部实现的 服务降级 需要提供失败后降级执行的方法<br>用一个<code>HystrixCommand</code>或者 <code>HystrixObservableCommand</code> （这是命令模式的一个例子）包装所有的对外部系统（或者依赖）的调用，典型地它们在一个单独的线程中执行<br><strong>调用超时时间</strong>比你自己定义的阈值要长。有一个默认值，对于大多数的依赖项你是可以自定义超时时间的。<br><strong>为每个依赖项维护一个小的线程池(或信号量)；如果线程池满了，那么该依赖性将会立即拒绝请求，而不是排队。</strong><br>调用的结果有这么几种：成功、失败（客户端抛出异常）、超时、拒绝。<br>在一段时间内，如果服务的错误百分比超过了一个阈值，就会触发一个断路器来停止对特定服务的所有请求，无论是手动的还是自动的。<br>当请求失败、被拒绝、超时或短路时，执行回退逻辑。<br><img src="https://i.loli.net/2019/07/12/5d27fe69beb6787967.png" alt><br><strong>具体原理查询 作者：废物大师兄 <a href="https://www.cnblogs.com/cjsblog/p/9395584.html" target="_blank" rel="noopener">Hystrix是如何工作的</a></strong></p>
+<h3 id="熔断器熔断原理"><a href="#熔断器熔断原理" class="headerlink" title="熔断器熔断原理"></a>熔断器熔断原理</h3><p>总请求失败 或者出现异常 则会出现熔断现象<br><img src="https://i.loli.net/2019/07/12/5d2831b49483172943.png" alt><br>熔断器开始时 该服务会直接调用错误方法<br><code>HystrixCommandProperties</code>文件中我们可以查看到<br><code>default_circuitBreakerErrorThresholdPercentage</code> 请求连接失败率 默认为50<br><code>default_circuitBreakerSleepWindowInMilliseconds</code> 熔断时间 默认5000毫秒<br><code>default_circuitBreakerRequestVolumeThreshold</code> 触发熔断个数 20个 （查看20个内熔断比例）<br>同样我们搜索以后 可以在方法中 或者 配置文件中进行配置<br><strong>配置文件表 作者：佳716 <a href="https://www.cnblogs.com/yawen/p/6655352.html" target="_blank" rel="noopener">熔断机制HYSTRIX</a></strong></p>
 <h3 id="Hystix代码实现（基本使用）"><a href="#Hystix代码实现（基本使用）" class="headerlink" title="Hystix代码实现（基本使用）"></a>Hystix代码实现（基本使用）</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-netflix-hystrix<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="CustomerApplication"><a href="#CustomerApplication" class="headerlink" title="CustomerApplication"></a>CustomerApplication</h4><p>正常情况下添加注解 <code>@EnableCircuitBreaker</code><br>但是我们Spring对Erueda springboot Hystix整合注解成为<br><code>SpringCloudApplication()</code></p>
@@ -492,11 +495,33 @@
 <h3 id="Hystix代码实现-高级使用"><a href="#Hystix代码实现-高级使用" class="headerlink" title="Hystix代码实现(高级使用)"></a>Hystix代码实现(高级使用)</h3><p>我们可以在方法的<code>@HystrixCommand</code>中添加commandProperties 属性控制单个方法的熔断时间<br>默认为1s</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@HystrixCommand</span>(fallbackMethod = <span class="string">"fallbackMethod"</span>,commandProperties = &#123;</span><br><span class="line">           <span class="meta">@HystrixProperty</span>(name = <span class="string">"execution.isolation.thread.timeoutInMilliseconds"</span>,value = <span class="string">"2000"</span>) <span class="comment">//默认熔断时间设置为2s</span></span><br><span class="line">   &#125;)</span><br></pre></td></tr></table></figure>
 
-<p>值我们去<code>hystrix</code>包中去找<code>HystrixCommandProperties</code><br><img src="/SpringCloud/20190712122727171.png" alt><br>其中 <code>default_executionTimeoutInMilliseconds</code>为默认熔断时间<br><img src="/SpringCloud/20190712122854741.png" alt><br>通过搜索栏 可以找到默认的key值<br><img src="/SpringCloud/20190712122918328.png" alt></p>
+<p>值我们去<code>hystrix</code>包中去找<code>HystrixCommandProperties</code><br><img src="https://i.loli.net/2019/07/12/5d2831b4a189d91489.png" alt><br>其中 <code>default_executionTimeoutInMilliseconds</code>为默认熔断时间<br><img src="https://i.loli.net/2019/07/12/5d2831b475a9968196.png" alt><br>通过搜索栏 可以找到默认的key值<br><img src="https://i.loli.net/2019/07/12/5d2831b53883846925.png" alt></p>
 <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">hystrix:</span></span><br><span class="line"><span class="attr">  command:</span></span><br><span class="line"><span class="attr">    default:</span></span><br><span class="line"><span class="attr">      execution:</span></span><br><span class="line"><span class="attr">        isolation:</span></span><br><span class="line"><span class="attr">          thread:</span></span><br><span class="line"><span class="attr">            timeoutInMillisecond:</span> <span class="number">6000</span> <span class="comment"># 设置hystrix全局的超时时间为6000ms</span></span><br></pre></td></tr></table></figure>
 
 <p>如果我们需要获得单独某个服务的超时时间 在default 处改为某个服务名即可</p>
+<h2 id="Feign"><a href="#Feign" class="headerlink" title="Feign"></a>Feign</h2><p>Feign可以把Rest的请求进行隐藏，伪装成类似SpringMVC的Controller一样。你不用再自己拼接url，拼接参数等等操作，一切都交给Feign去做。</p>
+<p>默认支持 Ribbon轮询功能 熔断Hystrix需要手动开启<br><img src="/SpringCloud-2.Hystix-Fiegn/20190712043446099.png" alt></p>
+<h3 id="Feign中的Ribbon"><a href="#Feign中的Ribbon" class="headerlink" title="Feign中的Ribbon"></a>Feign中的Ribbon</h3><p>配置方法和单独引用ribbon配置方法相同</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">user-service:</span></span><br><span class="line"><span class="attr">  ribbon:</span></span><br><span class="line"><span class="attr">    ConnectTimeout:</span> <span class="number">250</span> <span class="comment"># 连接超时时间(ms)</span></span><br><span class="line"><span class="attr">    ReadTimeout:</span> <span class="number">1000</span> <span class="comment"># 通信超时时间(ms)</span></span><br><span class="line"><span class="attr">    OkToRetryOnAllOperations:</span> <span class="literal">true</span> <span class="comment"># 是否对所有操作重试</span></span><br><span class="line"><span class="attr">    MaxAutoRetriesNextServer:</span> <span class="number">1</span> <span class="comment"># 同一服务不同实例的重试次数</span></span><br><span class="line"><span class="attr">    MaxAutoRetries:</span> <span class="number">1</span> <span class="comment"># 同一实例的重试次数</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="Feign中的Hystix"><a href="#Feign中的Hystix" class="headerlink" title="Feign中的Hystix"></a>Feign中的Hystix</h3><p>开启Hystix 默认关闭</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">feign:</span></span><br><span class="line"><span class="attr">  hystrix:</span></span><br><span class="line"><span class="attr">    enabled:</span> <span class="literal">true</span> <span class="comment"># 开启Feign的熔断功能</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-openfeign<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>启动类添加注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@SpringCloudApplication</span></span><br><span class="line"><span class="meta">@EnableFeignClients</span>  <span class="comment">//开启Feign</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomerApplication</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(CustomerApplication.class);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>fallback 配置的是 失败方法 需要实现当前的SellerClient接口</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">feign:</span></span><br><span class="line"><span class="attr">  hystrix:</span></span><br><span class="line"><span class="attr">    enabled:</span> <span class="literal">true</span> <span class="comment"># 开启Feign的熔断功能</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FeignClient</span>(value = <span class="string">"seller-provide"</span>,fallback = SellerFallBack.class)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">SellerClient</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/findById?id=&#123;id&#125;"</span>)</span><br><span class="line">    <span class="comment">// 添加 RequestParam 就可以 获取值</span></span><br><span class="line">    <span class="function">Seller <span class="title">querySellerById</span><span class="params">(@RequestParam(name = <span class="string">"id"</span>)</span> Integer id)</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>实现类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SellerFallBack</span> <span class="keyword">implements</span> <span class="title">SellerClient</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Seller <span class="title">querySellerById</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        Seller seller = <span class="keyword">new</span> Seller();</span><br><span class="line">        seller.setSname(<span class="string">"服务器正忙 请稍后再试"</span>);</span><br><span class="line">        <span class="keyword">return</span> seller;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>controller</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomerController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> SellerClient client;</span><br><span class="line"></span><br><span class="line">   <span class="meta">@RequestMapping</span>(<span class="string">"/findById"</span>)</span><br><span class="line">   <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Seller <span class="title">findById</span><span class="params">(@RequestParam(name = <span class="string">"id"</span>, defaultValue = <span class="string">"1"</span>)</span> Integer id) </span>&#123;</span><br><span class="line">        <span class="comment">// feign 默认配置了负载均衡 ribbon</span></span><br><span class="line">        <span class="keyword">return</span> client.querySellerById(id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -804,7 +829,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hystix"><span class="nav-number">1.</span> <span class="nav-text">Hystix</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#事故原理分析"><span class="nav-number">1.1.</span> <span class="nav-text">事故原理分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hystix功能"><span class="nav-number">1.2.</span> <span class="nav-text">Hystix功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hystix如何实现"><span class="nav-number">1.3.</span> <span class="nav-text">Hystix如何实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hystix代码实现（基本使用）"><span class="nav-number">1.4.</span> <span class="nav-text">Hystix代码实现（基本使用）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CustomerApplication"><span class="nav-number">1.4.1.</span> <span class="nav-text">CustomerApplication</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CustomerController"><span class="nav-number">1.4.2.</span> <span class="nav-text">CustomerController</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hystix代码实现-高级使用"><span class="nav-number">1.5.</span> <span class="nav-text">Hystix代码实现(高级使用)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hystix"><span class="nav-number">1.</span> <span class="nav-text">Hystix</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#雪崩问题分析"><span class="nav-number">1.1.</span> <span class="nav-text">雪崩问题分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hystix功能"><span class="nav-number">1.2.</span> <span class="nav-text">Hystix功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hystix如何实现-线程隔离和服务降级"><span class="nav-number">1.3.</span> <span class="nav-text">Hystix如何实现 线程隔离和服务降级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#熔断器熔断原理"><span class="nav-number">1.4.</span> <span class="nav-text">熔断器熔断原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hystix代码实现（基本使用）"><span class="nav-number">1.5.</span> <span class="nav-text">Hystix代码实现（基本使用）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CustomerApplication"><span class="nav-number">1.5.1.</span> <span class="nav-text">CustomerApplication</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CustomerController"><span class="nav-number">1.5.2.</span> <span class="nav-text">CustomerController</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hystix代码实现-高级使用"><span class="nav-number">1.6.</span> <span class="nav-text">Hystix代码实现(高级使用)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Feign"><span class="nav-number">2.</span> <span class="nav-text">Feign</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Feign中的Ribbon"><span class="nav-number">2.1.</span> <span class="nav-text">Feign中的Ribbon</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feign中的Hystix"><span class="nav-number">2.2.</span> <span class="nav-text">Feign中的Hystix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码实现"><span class="nav-number">2.3.</span> <span class="nav-text">代码实现</span></a></li></ol></li></ol></div>
             
 
           </div>
