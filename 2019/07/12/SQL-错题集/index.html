@@ -104,12 +104,12 @@
 <meta property="og:site_name" content="代码呱唧唧">
 <meta property="og:description" content="MySQL 索引组合索引最左优先原则组合索引的第一个字段必须出现在查询组句中，这个索引才会被用到。只要组合索引最左边第一个字段出现在Where中，那么不管后面的字段出现与否或者出现顺序如何，MySQL引擎都会自动调用索引来优化查询效率。 根据最左匹配原则可以知道B-Tree建立索引的过程，比如假设有一个3列索引(col1,col2,col3),那么MySQL只会会建立三个索引(col1),(col">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/SQL-%E9%94%99%E9%A2%98%E9%9B%86/20190712100100380.png">
-<meta property="og:updated_time" content="2019-07-12T02:02:27.438Z">
+<meta property="og:image" content="https://i.loli.net/2019/07/12/5d27ea3a1fe2360771.png">
+<meta property="og:updated_time" content="2019-07-12T02:03:27.077Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQL 知识杂谈2">
 <meta name="twitter:description" content="MySQL 索引组合索引最左优先原则组合索引的第一个字段必须出现在查询组句中，这个索引才会被用到。只要组合索引最左边第一个字段出现在Where中，那么不管后面的字段出现与否或者出现顺序如何，MySQL引擎都会自动调用索引来优化查询效率。 根据最左匹配原则可以知道B-Tree建立索引的过程，比如假设有一个3列索引(col1,col2,col3),那么MySQL只会会建立三个索引(col1),(col">
-<meta name="twitter:image" content="http://yoursite.com/SQL-%E9%94%99%E9%A2%98%E9%9B%86/20190712100100380.png">
+<meta name="twitter:image" content="https://i.loli.net/2019/07/12/5d27ea3a1fe2360771.png">
 
 
 
@@ -419,7 +419,7 @@
                 
               
 
-              <time title="创建时间：2019-07-12 09:51:54 / 修改时间：10:02:27" itemprop="dateCreated datePublished" datetime="2019-07-12T09:51:54+08:00">2019-07-12</time>
+              <time title="创建时间：2019-07-12 09:51:54 / 修改时间：10:03:27" itemprop="dateCreated datePublished" datetime="2019-07-12T09:51:54+08:00">2019-07-12</time>
             
 
             
@@ -490,7 +490,7 @@
 
       
         <h2 id="MySQL-索引"><a href="#MySQL-索引" class="headerlink" title="MySQL 索引"></a>MySQL 索引</h2><h3 id="组合索引"><a href="#组合索引" class="headerlink" title="组合索引"></a>组合索引</h3><p>最左优先原则<br>组合索引的第一个字段必须出现在查询组句中，这个索引才会被用到。<br>只要组合索引<strong>最左边第一个字段出现在Where中</strong>，那么<strong>不管后面的字段出现与否或者出现顺序</strong>如何，MySQL引擎都会<strong>自动调用索引来优化查询效率。</strong></p>
-<p>根据最左匹配原则可以知道<code>B-Tree</code>建立索引的过程，比如假设有一个<code>3列索引(col1,col2,col3)</code>,那么MySQL只会会建立三个索引(col1),(col1,col2),(col1,col2,col3)。<br><img src="/SQL-%E9%94%99%E9%A2%98%E9%9B%86/20190712100100380.png" alt><br>题目会创建三个索引<code>（plat_order_id）（plat_order_id与plat_game_id的组合索引）（plat_order_id、plat_game_id与plat_id的组合索引）</code></p>
+<p>根据最左匹配原则可以知道<code>B-Tree</code>建立索引的过程，比如假设有一个<code>3列索引(col1,col2,col3)</code>,那么MySQL只会会建立三个索引(col1),(col1,col2),(col1,col2,col3)。<br><img src="https://i.loli.net/2019/07/12/5d27ea3a1fe2360771.png" alt><br>题目会创建三个索引<code>（plat_order_id）（plat_order_id与plat_game_id的组合索引）（plat_order_id、plat_game_id与plat_id的组合索引）</code></p>
 
       
     </div>
@@ -527,8 +527,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/11/Spring-Cloud/" rel="next" title="Spring Cloud">
-                <i class="fa fa-chevron-left"></i> Spring Cloud
+              <a href="/2019/07/11/Spring-Cloud/" rel="next" title="Spring Cloud 1.入门 Erueka Ribbon">
+                <i class="fa fa-chevron-left"></i> Spring Cloud 1.入门 Erueka Ribbon
               </a>
             
           </div>
@@ -536,6 +536,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/12/SpringCloud/" rel="prev" title="SpringCloud 2.Hystix">
+                SpringCloud 2.Hystix <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -610,7 +614,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">49</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
