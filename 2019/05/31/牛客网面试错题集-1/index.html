@@ -106,9 +106,10 @@
 <meta property="og:image" content="https://i.loli.net/2019/06/25/5d118d87ea44454845.png">
 <meta property="og:image" content="https://i.loli.net/2019/05/31/5cf09d3248e3b35590.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/02/5cf33cc97c0a529140.png">
+<meta property="og:image" content="https://i.loli.net/2019/07/22/5d351341c6dad29163.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/03/5cf4934e79da522816.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/03/5cf49606135fd89683.png">
-<meta property="og:updated_time" content="2019-07-13T01:54:58.918Z">
+<meta property="og:updated_time" content="2019-07-23T02:24:12.087Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="牛客网面试错题集 1">
 <meta name="twitter:description" content="面向对象的五大基本原则（抽象类原则不是） 单一职责原则（SRP） 开放封闭原则（OCP）  里氏替换原则（LSP） 依赖倒置原则（DIP）  接口隔离原则（ISP）  Java语言特性Java致力于检查程序在编译和运行时的错误。Java虚拟机实现了跨平台接口类型检查帮助检查出许多开发早期出现的错误。Java自己操纵内存减少了内存出错的可能性。Java还实现了真数组，避免了覆盖数据的可能。 程序设计">
@@ -439,7 +440,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-13 09:54:58" itemprop="dateModified" datetime="2019-07-13T09:54:58+08:00">2019-07-13</time>
+                <time title="修改时间：2019-07-23 10:24:12" itemprop="dateModified" datetime="2019-07-23T10:24:12+08:00">2019-07-23</time>
               
             
           </span>
@@ -536,7 +537,7 @@ volatile不会造成线程的阻塞；synchronized可能会造成线程的阻塞
 <li>a2 = s;</li>
 <li>a3 = a1 * a2;</li>
 </ol>
-<p>3 4错误 char byte short参与运算会自动转换int<br>需要强转 会在编译期报错<br><img src="https://i.loli.net/2019/06/25/5d118d87ea44454845.png" alt><br><strong>如果被final修饰 为常量 可以进行赋值</strong></p>
+<p>3 4错误 char byte short参与运算会自动转换int<br>需要强转 会在编译期报错<br><img src="https://i.loli.net/2019/06/25/5d118d87ea44454845.png" alt><br>自动转换类型 由低到高<br>byte,short,char-&gt; int -&gt; long -&gt; float -&gt; double<br><strong>如果被final修饰 为常量 可以进行赋值</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span> b1=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">final</span> <span class="keyword">byte</span> b2=<span class="number">2</span>,b3=<span class="number">4</span>;</span><br><span class="line">b1=b2+b3;</span><br></pre></td></tr></table></figure>
 
 <h3 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h3><p>case中不加 break 终止 则会将下面的程序都运行</p>
@@ -606,7 +607,7 @@ join() wait() 都可以释放锁资源</p>
 <p>SortedMap是接口</p>
 <h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>父类为私有变量 可以继承 但不能对其操作<br>一个子类可以覆盖掉父类的同步方法</p>
 <h3 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h3><p>客户端<br>Socket s = new Socket(“127.0.0.1”,6666);<br>服务器 监听端口9000<br>ServerSocket ss = new ServerSocket(6666);</p>
-<p><strong>客户端</strong>通过new Socket()方法创建通信的Socket对象<br><strong>服务器端</strong>通过new ServerSocket()创建TCP连接对象  accept()接纳客户端请求</p>
+<p><strong>客户端</strong>通过new Socket()方法创建通信的Socket对象<br><strong>服务器端</strong>通过new ServerSocket()创建TCP连接对象  accept()接纳客户端请求<br><img src="https://i.loli.net/2019/07/22/5d351341c6dad29163.png" alt></p>
 <h3 id="接口与抽象类"><a href="#接口与抽象类" class="headerlink" title="接口与抽象类"></a>接口与抽象类</h3><p>抽象方法没有方法体</p>
 <h4 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h4><p>特点:<br>1.抽象类中可以构造方法<br>2.抽象类中可以存在普通属性，方法，静态属性和方法。<br>3.抽象类中可以存在抽象方法。<br>4.如果一个类中有一个抽象方法，那么当前类一定是抽象类；抽象类中不一定有抽象方法。<br>5.抽象类中的抽象方法，需要有子类实现，如果子类不实现，则子类也需要定义为抽象的。<br>6.没有抽象方法的抽象类也不可以实例化 使用此特性创建工具类防止实例化</p>
 <h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><p>接口 去多继承接口 使用的的extends<br>1.在接口中只有方法的声明，没有方法体。<br>2.在接口中只有常量，因为定义的变量，在编译的时候都会默认加上<br>public static final<br>3.在接口中的方法，永远都被public来修饰。<br>4.接口中没有构造方法，也不能实例化接口的对象。<br>5.接口可以实现多继承<br>6.接口中定义的方法都需要有实现类来实现，如果实现类不能实现接口中的所有方法<br>7.则实现类定义为抽象类。</p>
@@ -627,7 +628,7 @@ join() wait() 都可以释放锁资源</p>
 <h3 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h3><p>静态内部类才可以声明静态方法<br>静态方法不可以使用非静态变量<br>抽象方法不可以有函数体</p>
 <p>匿名内部类 ：因为匿名内部类没有名 所以没有办法定义构造器</p>
 <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p><code>String[] s=new String[10];</code><br>默认初始化，基本类型是 0 ，布尔类型是 false ，引用类型为null<br>所有 <code>string[0]=null;</code></p>
-<p><code>float []f[] = new float[6][6];</code> 一种写法</p>
+<p><code>float []f[] = new float[6][6];</code> 一种写法<br>java中只有一维数组 二位多维都是声明一个一维数组的数组 就是二维</p>
 <h3 id="Java内存区域"><a href="#Java内存区域" class="headerlink" title="Java内存区域"></a>Java内存区域</h3><p><img src="https://i.loli.net/2019/06/03/5cf4934e79da522816.png" alt><br>off-heap 非堆内存 JVM进程管理的内存</p>
 <h3 id="类所包含的类型变量"><a href="#类所包含的类型变量" class="headerlink" title="类所包含的类型变量"></a>类所包含的类型变量</h3><ul>
 <li><strong>实例变量</strong>：是定义在是定义在类中，方法体之外的变量。这种变量在创建对象的时候实例化。成员变量可以被类中方法、构造方法和特定类的语句块访问。分配了内存空间后会给所有的成员变量一次初始化，<strong>没有赋值的会给成员变量对应类型的值，数据类型不同则默认值不同</strong></li>
@@ -652,6 +653,7 @@ join() wait() 都可以释放锁资源</p>
 <h3 id="super-getClass-getName"><a href="#super-getClass-getName" class="headerlink" title="super.getClass().getName()"></a>super.getClass().getName()</h3><p>返回包名+类名</p>
 <h3 id="Java语言默认字符集"><a href="#Java语言默认字符集" class="headerlink" title="Java语言默认字符集"></a>Java语言默认字符集</h3><p>Unicode</p>
 <h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p>String对象不可变<br>stringbuffer是可变的<br>StringBuffer是线程安全<br>StringBuilder是线程不安全</p>
+<p>StringBuffer 和 String 都是final修饰的</p>
 <p>subString(a,b); 创建new String();<br>截取从第几个开始，往后数b-a个</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str =&quot;&quot;;</span><br><span class="line">System.out.print(str.split(&quot;,&quot;).length);</span><br></pre></td></tr></table></figure>
 
@@ -784,7 +786,7 @@ join() wait() 都可以释放锁资源</p>
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">50</span>
+                    <span class="site-state-item-count">51</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
