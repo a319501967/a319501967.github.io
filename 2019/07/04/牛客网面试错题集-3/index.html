@@ -96,19 +96,19 @@
 
 
 
-  <meta name="description" content="Servlet如果在类中定义成员变量，而在service中根据不同的线程对该成员变量进行更改，那么在并发的时候就会引起错误。最好是在方法中，定义局部变量，而不是类变量或者对象的成员变量。由于方法中的局部变量是在栈中，彼此各自都拥有独立的运行空间而不会互相干扰，因此才做到线程安全。 JDBCJava数据库连接库JDBC用到哪种设计模式?桥接模式 异常在try语句块或catch语句块中执行到Syste">
+  <meta name="description" content="Servlet如果在类中定义成员变量，而在service中根据不同的线程对该成员变量进行更改，那么在并发的时候就会引起错误。最好是在方法中，定义局部变量，而不是类变量或者对象的成员变量。由于方法中的局部变量是在栈中，彼此各自都拥有独立的运行空间而不会互相干扰，因此才做到线程安全。 JDBCJava数据库连接库JDBC用到哪种设计模式?桥接模式 异常try抛出异常 被catch捕捉在try语句块或c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="牛客网面试错题集 3">
 <meta property="og:url" content="http://yoursite.com/2019/07/04/牛客网面试错题集-3/index.html">
 <meta property="og:site_name" content="代码呱唧唧">
-<meta property="og:description" content="Servlet如果在类中定义成员变量，而在service中根据不同的线程对该成员变量进行更改，那么在并发的时候就会引起错误。最好是在方法中，定义局部变量，而不是类变量或者对象的成员变量。由于方法中的局部变量是在栈中，彼此各自都拥有独立的运行空间而不会互相干扰，因此才做到线程安全。 JDBCJava数据库连接库JDBC用到哪种设计模式?桥接模式 异常在try语句块或catch语句块中执行到Syste">
+<meta property="og:description" content="Servlet如果在类中定义成员变量，而在service中根据不同的线程对该成员变量进行更改，那么在并发的时候就会引起错误。最好是在方法中，定义局部变量，而不是类变量或者对象的成员变量。由于方法中的局部变量是在栈中，彼此各自都拥有独立的运行空间而不会互相干扰，因此才做到线程安全。 JDBCJava数据库连接库JDBC用到哪种设计模式?桥接模式 异常try抛出异常 被catch捕捉在try语句块或c">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/07/14/5d2a7f8a473c139128.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/28/5d3d02fecb9f729824.png">
-<meta property="og:updated_time" content="2019-07-28T02:05:59.328Z">
+<meta property="og:updated_time" content="2019-07-29T02:14:48.897Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="牛客网面试错题集 3">
-<meta name="twitter:description" content="Servlet如果在类中定义成员变量，而在service中根据不同的线程对该成员变量进行更改，那么在并发的时候就会引起错误。最好是在方法中，定义局部变量，而不是类变量或者对象的成员变量。由于方法中的局部变量是在栈中，彼此各自都拥有独立的运行空间而不会互相干扰，因此才做到线程安全。 JDBCJava数据库连接库JDBC用到哪种设计模式?桥接模式 异常在try语句块或catch语句块中执行到Syste">
+<meta name="twitter:description" content="Servlet如果在类中定义成员变量，而在service中根据不同的线程对该成员变量进行更改，那么在并发的时候就会引起错误。最好是在方法中，定义局部变量，而不是类变量或者对象的成员变量。由于方法中的局部变量是在栈中，彼此各自都拥有独立的运行空间而不会互相干扰，因此才做到线程安全。 JDBCJava数据库连接库JDBC用到哪种设计模式?桥接模式 异常try抛出异常 被catch捕捉在try语句块或c">
 <meta name="twitter:image" content="https://i.loli.net/2019/07/14/5d2a7f8a473c139128.png">
 
 
@@ -436,7 +436,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-28 10:05:59" itemprop="dateModified" datetime="2019-07-28T10:05:59+08:00">2019-07-28</time>
+                <time title="修改时间：2019-07-29 10:14:48" itemprop="dateModified" datetime="2019-07-29T10:14:48+08:00">2019-07-29</time>
               
             
           </span>
@@ -503,7 +503,7 @@
       
         <h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><p>如果在<strong>类中定义成员变量</strong>，而在service中根据不同的线程对该成员变量进行更改，那么<strong>在并发的时候就会引起错误</strong>。最好是<strong>在方法中，定义局部变量</strong>，而不是类变量或者对象的成员变量。<strong>由于方法中的局部变量是在栈中，彼此各自都拥有独立的运行空间而不会互相干扰</strong>，因此才做到线程安全。</p>
 <h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><p>Java数据库连接库JDBC用到哪种设计模式?<br>桥接模式</p>
-<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>在try语句块或catch语句块中执行到System.exit(0)直接退出程序 finally不会执行<br><strong>运行时异常</strong> 包括：<strong>都是RuntimeException类及其子类异常</strong>，如NullPointerException(空指针异常)、IndexOutOfBoundsException(下标越界异常)等，这些异常是<strong>不检查异常</strong>，程序中可以选择捕获处理，也可以不处理。这些异常一般是由<strong>程序逻辑错误引起的</strong>，程序应该从逻辑角度尽可能避免这类异常的发生。<br><strong>非运行时异常（编译异常）</strong> 包括：RuntimeException以外的异常，类型上都属于Exception类及其子类。从程序语法角度讲是必须进行处理的异常，<strong>如果不处理，程序就不能编译通过。</strong>如IOException、SQLException等以及用户自定义的Exception异常，一般情况下不自定义检查异常</p>
+<h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>try抛出异常 被catch捕捉<br>在try语句块或catch语句块中执行到System.exit(0)直接退出程序 finally不会执行<br><strong>运行时异常</strong> 包括：<strong>都是RuntimeException类及其子类异常</strong>，如NullPointerException(空指针异常)、IndexOutOfBoundsException(下标越界异常)等，这些异常是<strong>不检查异常</strong>，程序中可以选择捕获处理，也可以不处理。这些异常一般是由<strong>程序逻辑错误引起的</strong>，程序应该从逻辑角度尽可能避免这类异常的发生。<br><strong>非运行时异常（编译异常）</strong> 包括：RuntimeException以外的异常，类型上都属于Exception类及其子类。从程序语法角度讲是必须进行处理的异常，<strong>如果不处理，程序就不能编译通过。</strong>如IOException、SQLException等以及用户自定义的Exception异常，一般情况下不自定义检查异常</p>
 <p>finally() 不是object 方法<br>如果catch中有return finally 也有return 执行 finally中的</p>
 <h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p><code>%``*</code>同级运算顺序<br><code>boolean b=true?false:true==true?false:true;</code>从右往左看</p>
 <h2 id="虚拟机运行参数"><a href="#虚拟机运行参数" class="headerlink" title="虚拟机运行参数"></a>虚拟机运行参数</h2><p>-Xmx：最大堆大小<br>-Xms：初始堆大小<br>-Xmn:年轻代大小<br>-XXSurvivorRatio：年轻代中Eden中所占份数</p>
@@ -517,6 +517,7 @@
 <h2 id="计算机所能处理的最小的数据项"><a href="#计算机所能处理的最小的数据项" class="headerlink" title="计算机所能处理的最小的数据项"></a>计算机所能处理的最小的数据项</h2><p>位 2进制位</p>
 <h2 id="JSP内置对象"><a href="#JSP内置对象" class="headerlink" title="JSP内置对象"></a>JSP内置对象</h2><p>application对象是共享的，多个用户<strong>共享一个</strong>，以此实现数据共享和通信<br>     session对象指的是客户端与服务器的一次会话，从客户连到服务器的一个WebApplication开始，直到客户端与服务器断开连接为止。它是HttpSession类的实例.</p>
 <h2 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h2><p>内部类理解成类的成员，成员有4种访问权限吧，内部类也是！分别为private、protected、public以及默认的访问权限<br><img src="https://i.loli.net/2019/07/28/5d3d02fecb9f729824.png" alt></p>
+<h2 id><a href="#" class="headerlink" title="%"></a>%</h2><p>只能用于整数与整数之间的运算</p>
 
       
     </div>
@@ -634,7 +635,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">51</span>
+                    <span class="site-state-item-count">52</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -833,7 +834,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet"><span class="nav-number">1.</span> <span class="nav-text">Servlet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC"><span class="nav-number">2.</span> <span class="nav-text">JDBC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常"><span class="nav-number">3.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符"><span class="nav-number">4.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机运行参数"><span class="nav-number">5.</span> <span class="nav-text">虚拟机运行参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-编码"><span class="nav-number">6.</span> <span class="nav-text">Java 编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-体系结构"><span class="nav-number">7.</span> <span class="nav-text">Java 体系结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web-xml"><span class="nav-number">8.</span> <span class="nav-text">web.xml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object"><span class="nav-number">9.</span> <span class="nav-text">Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语言种类"><span class="nav-number">10.</span> <span class="nav-text">语言种类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static"><span class="nav-number">11.</span> <span class="nav-text">static</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机所能处理的最小的数据项"><span class="nav-number">12.</span> <span class="nav-text">计算机所能处理的最小的数据项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP内置对象"><span class="nav-number">13.</span> <span class="nav-text">JSP内置对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内部类"><span class="nav-number">14.</span> <span class="nav-text">内部类</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet"><span class="nav-number">1.</span> <span class="nav-text">Servlet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC"><span class="nav-number">2.</span> <span class="nav-text">JDBC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常"><span class="nav-number">3.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符"><span class="nav-number">4.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机运行参数"><span class="nav-number">5.</span> <span class="nav-text">虚拟机运行参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-编码"><span class="nav-number">6.</span> <span class="nav-text">Java 编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-体系结构"><span class="nav-number">7.</span> <span class="nav-text">Java 体系结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web-xml"><span class="nav-number">8.</span> <span class="nav-text">web.xml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object"><span class="nav-number">9.</span> <span class="nav-text">Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语言种类"><span class="nav-number">10.</span> <span class="nav-text">语言种类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static"><span class="nav-number">11.</span> <span class="nav-text">static</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机所能处理的最小的数据项"><span class="nav-number">12.</span> <span class="nav-text">计算机所能处理的最小的数据项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP内置对象"><span class="nav-number">13.</span> <span class="nav-text">JSP内置对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内部类"><span class="nav-number">14.</span> <span class="nav-text">内部类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">15.</span> <span class="nav-text">%</span></a></li></ol></div>
             
 
           </div>
