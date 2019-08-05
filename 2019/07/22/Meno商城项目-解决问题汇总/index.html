@@ -104,7 +104,7 @@
 <meta property="og:description" content="Post请求显示参数 但本地无法接收正常post请求 返回参数形式应该为 form表单但返回如下形式将 Request Payload 转为 Form Data 格式 使用qs模块 安装方法npm install qs --save-dev 引入qsimport qs from &amp;#39;qs&amp;#39; 配置全局访问Vue.prototype.$qs = qs;  解决方法： data: this">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/07/30/5d3f9ddb1b0b997601.png">
-<meta property="og:updated_time" content="2019-07-30T01:31:08.871Z">
+<meta property="og:updated_time" content="2019-08-05T05:51:27.699Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Meno商城项目 解决问题汇总">
 <meta name="twitter:description" content="Post请求显示参数 但本地无法接收正常post请求 返回参数形式应该为 form表单但返回如下形式将 Request Payload 转为 Form Data 格式 使用qs模块 安装方法npm install qs --save-dev 引入qsimport qs from &amp;#39;qs&amp;#39; 配置全局访问Vue.prototype.$qs = qs;  解决方法： data: this">
@@ -435,7 +435,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-07-30 09:31:08" itemprop="dateModified" datetime="2019-07-30T09:31:08+08:00">2019-07-30</time>
+                <time title="修改时间：2019-08-05 13:51:27" itemprop="dateModified" datetime="2019-08-05T13:51:27+08:00">2019-08-05</time>
               
             
           </span>
@@ -490,7 +490,7 @@
 </ol>
 <p>解决方法：<br> <code>data: this.$qs.stringify(this.group)</code></p>
 <hr>
-<p> 如果接收为实体类 则<code>@RequestBody Spu spu</code> 添加注解获取请求体即可</p>
+<p> 如果接收为实体类 则<code>@RequestBody Spu spu</code> 添加注解获取请求体即可<br> Json格式用对象接收</p>
 <h2 id="当数据库表所属字段为关键字"><a href="#当数据库表所属字段为关键字" class="headerlink" title="当数据库表所属字段为关键字"></a>当数据库表所属字段为关键字</h2><p><code>@Column(name = &quot;</code>numeric<code>&quot;)</code><br>修饰<br><strong>注意：内部为`不是‘</strong></p>
 <h2 id="live-server"><a href="#live-server" class="headerlink" title="live-server"></a>live-server</h2><p><a href="https://www.npmjs.com/package/live-server" target="_blank" rel="noopener">https://www.npmjs.com/package/live-server</a><br>这是一款带有热加载功能的小型开发服务器。用它来展示你的HTML / JavaScript / CSS，但不能用于部署最终的网站。</p>
 <h3 id="安装和运行参数"><a href="#安装和运行参数" class="headerlink" title="安装和运行参数"></a>安装和运行参数</h3><p>安装，使用npm命令即可，这里建议全局安装，以后任意位置可用<br><code>npm install -g live-server</code><br>运行时，直接输入命令：<br><code>live-server</code><br>你可以在运行命令后，跟上一些参数以配置</p>
@@ -517,6 +517,9 @@
 <li><code>--help | -h</code> - 显示简洁的使用提示并退出</li>
 <li><code>--version | -v</code> - 显示版本并退出</li>
 </ul>
+<h2 id="Feign"><a href="#Feign" class="headerlink" title="Feign"></a>Feign</h2><p>Feign 如果调用的服务器没有响应 路径错误 或者出现错误  无返回结果 Feign 会报404 错误</p>
+<p>ps： 为啥返回404 害得我以为路径不对</p>
+<p>跨域请求 传入方法的参数要和注解中设置的要获取的变量名一致</p>
 
       
     </div>
@@ -833,7 +836,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Post请求显示参数-但本地无法接收"><span class="nav-number">1.</span> <span class="nav-text">Post请求显示参数 但本地无法接收</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用qs模块"><span class="nav-number">1.1.</span> <span class="nav-text">使用qs模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当数据库表所属字段为关键字"><span class="nav-number">2.</span> <span class="nav-text">当数据库表所属字段为关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#live-server"><span class="nav-number">3.</span> <span class="nav-text">live-server</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装和运行参数"><span class="nav-number">3.1.</span> <span class="nav-text">安装和运行参数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Post请求显示参数-但本地无法接收"><span class="nav-number">1.</span> <span class="nav-text">Post请求显示参数 但本地无法接收</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用qs模块"><span class="nav-number">1.1.</span> <span class="nav-text">使用qs模块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当数据库表所属字段为关键字"><span class="nav-number">2.</span> <span class="nav-text">当数据库表所属字段为关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#live-server"><span class="nav-number">3.</span> <span class="nav-text">live-server</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装和运行参数"><span class="nav-number">3.1.</span> <span class="nav-text">安装和运行参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Feign"><span class="nav-number">4.</span> <span class="nav-text">Feign</span></a></li></ol></div>
             
 
           </div>
