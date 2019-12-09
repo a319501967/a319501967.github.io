@@ -105,7 +105,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/07/14/5d2a7f8a473c139128.png">
 <meta property="og:image" content="https://i.loli.net/2019/07/28/5d3d02fecb9f729824.png">
-<meta property="og:updated_time" content="2019-08-07T03:43:10.756Z">
+<meta property="og:updated_time" content="2019-08-27T13:04:57.323Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="牛客网面试错题集 3">
 <meta name="twitter:description" content="Servlet如果在类中定义成员变量，而在service中根据不同的线程对该成员变量进行更改，那么在并发的时候就会引起错误。最好是在方法中，定义局部变量，而不是类变量或者对象的成员变量。由于方法中的局部变量是在栈中，彼此各自都拥有独立的运行空间而不会互相干扰，因此才做到线程安全。 JDBCJava数据库连接库JDBC用到哪种设计模式?桥接模式 异常try抛出异常 被catch捕捉在try语句块或c">
@@ -436,7 +436,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-07 11:43:10" itemprop="dateModified" datetime="2019-08-07T11:43:10+08:00">2019-08-07</time>
+                <time title="修改时间：2019-08-27 21:04:57" itemprop="dateModified" datetime="2019-08-27T21:04:57+08:00">2019-08-27</time>
               
             
           </span>
@@ -517,11 +517,21 @@
 <h2 id="计算机所能处理的最小的数据项"><a href="#计算机所能处理的最小的数据项" class="headerlink" title="计算机所能处理的最小的数据项"></a>计算机所能处理的最小的数据项</h2><p>位 2进制位</p>
 <h2 id="JSP内置对象"><a href="#JSP内置对象" class="headerlink" title="JSP内置对象"></a>JSP内置对象</h2><p>application对象是共享的，多个用户<strong>共享一个</strong>，以此实现数据共享和通信<br>     session对象指的是客户端与服务器的一次会话，从客户连到服务器的一个WebApplication开始，直到客户端与服务器断开连接为止。它是HttpSession类的实例.</p>
 <h2 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h2><p>内部类理解成类的成员，成员有4种访问权限吧，内部类也是！分别为private、protected、public以及默认的访问权限<br><img src="https://i.loli.net/2019/07/28/5d3d02fecb9f729824.png" alt></p>
-<h2 id><a href="#" class="headerlink" title="%"></a>%</h2><p>只能用于整数与整数之间的运算</p>
+<h2 id><a href="#" class="headerlink" title="% /"></a>% /</h2><p>% 只能用于整数与整数之间的运算<br>/ 看两遍符号是什么 如果都是整数 则需要取整 如果有一方是浮点型 则结果为浮点型</p>
 <h2 id="Io"><a href="#Io" class="headerlink" title="Io"></a>Io</h2><p>只要是字符流 就具有处理编码的能力</p>
 <h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><p><code>URL u =new URL(&quot;http://www.123.com&quot;)</code><br>无论网址是否存在 都会返回 里面的地址</p>
 <h2 id="虚拟机DEAD-标记"><a href="#虚拟机DEAD-标记" class="headerlink" title="虚拟机DEAD 标记"></a>虚拟机DEAD 标记</h2><p>真正宣布一个对象死亡，至少需要经历<strong>2次标记过程</strong>。当第一次标记时会同时进行一次筛选(判断此对象是否有必要执行<code>finalize</code>方法)。如果对象没有覆盖该方法，就面临死亡，所以说这个方法是对象逃脱死亡命运的最后一次机会。</p>
 <h2 id="强制转换类型"><a href="#强制转换类型" class="headerlink" title="强制转换类型"></a>强制转换类型</h2><p>强制转换类型 运算等级要高于运算符<br>所以强制转换类型 要先运算</p>
+<h2 id="Join"><a href="#Join" class="headerlink" title="Join()"></a>Join()</h2><p>Join() 底层调用的是wait() 方法所以会释放对象锁</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 父线程</span><br><span class="line">public class Parent extends Thread &#123;</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        Child child = new Child();</span><br><span class="line">        child.start();</span><br><span class="line">        child.join();</span><br><span class="line">        // ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 子线程</span><br><span class="line">public class Child extends Thread &#123;</span><br><span class="line">    public void run() &#123;</span><br><span class="line">        // ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 Parent.run() 中，通过 Child child = new Child(); 新建 child 子线程（此时 child 处于 NEW 状态）；</p>
+<p>然后再调用 child.start()（child 转换为 RUNNABLE 状态）；</p>
+<p>再调用 child.join()。<br>在 Parent 调用 child.join() 后，<strong>child 子线程正常运行</strong>，<strong>Parent 父线程会等待 child 子线程结束后再继续运行</strong>。</p>
+<p>join() 方法 谁调用 谁必须运行完  释放锁</p>
+<h2 id="-1"><a href="#-1" class="headerlink" title="+="></a>+=</h2><p>a+=b的语句，此语句会将被赋值的变量自动强制转化为相对应的类型。</p>
 
       
     </div>
@@ -639,7 +649,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">52</span>
+                    <span class="site-state-item-count">55</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -838,7 +848,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet"><span class="nav-number">1.</span> <span class="nav-text">Servlet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC"><span class="nav-number">2.</span> <span class="nav-text">JDBC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常"><span class="nav-number">3.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符"><span class="nav-number">4.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机运行参数"><span class="nav-number">5.</span> <span class="nav-text">虚拟机运行参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-编码"><span class="nav-number">6.</span> <span class="nav-text">Java 编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-体系结构"><span class="nav-number">7.</span> <span class="nav-text">Java 体系结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web-xml"><span class="nav-number">8.</span> <span class="nav-text">web.xml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object"><span class="nav-number">9.</span> <span class="nav-text">Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语言种类"><span class="nav-number">10.</span> <span class="nav-text">语言种类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static"><span class="nav-number">11.</span> <span class="nav-text">static</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机所能处理的最小的数据项"><span class="nav-number">12.</span> <span class="nav-text">计算机所能处理的最小的数据项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP内置对象"><span class="nav-number">13.</span> <span class="nav-text">JSP内置对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内部类"><span class="nav-number">14.</span> <span class="nav-text">内部类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">15.</span> <span class="nav-text">%</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Io"><span class="nav-number">16.</span> <span class="nav-text">Io</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL"><span class="nav-number">17.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机DEAD-标记"><span class="nav-number">18.</span> <span class="nav-text">虚拟机DEAD 标记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#强制转换类型"><span class="nav-number">19.</span> <span class="nav-text">强制转换类型</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Servlet"><span class="nav-number">1.</span> <span class="nav-text">Servlet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDBC"><span class="nav-number">2.</span> <span class="nav-text">JDBC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常"><span class="nav-number">3.</span> <span class="nav-text">异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符"><span class="nav-number">4.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机运行参数"><span class="nav-number">5.</span> <span class="nav-text">虚拟机运行参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-编码"><span class="nav-number">6.</span> <span class="nav-text">Java 编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-体系结构"><span class="nav-number">7.</span> <span class="nav-text">Java 体系结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web-xml"><span class="nav-number">8.</span> <span class="nav-text">web.xml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object"><span class="nav-number">9.</span> <span class="nav-text">Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语言种类"><span class="nav-number">10.</span> <span class="nav-text">语言种类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static"><span class="nav-number">11.</span> <span class="nav-text">static</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机所能处理的最小的数据项"><span class="nav-number">12.</span> <span class="nav-text">计算机所能处理的最小的数据项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP内置对象"><span class="nav-number">13.</span> <span class="nav-text">JSP内置对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内部类"><span class="nav-number">14.</span> <span class="nav-text">内部类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">15.</span> <span class="nav-text">% /</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Io"><span class="nav-number">16.</span> <span class="nav-text">Io</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL"><span class="nav-number">17.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机DEAD-标记"><span class="nav-number">18.</span> <span class="nav-text">虚拟机DEAD 标记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#强制转换类型"><span class="nav-number">19.</span> <span class="nav-text">强制转换类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Join"><span class="nav-number">20.</span> <span class="nav-text">Join()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-1"><span class="nav-number">21.</span> <span class="nav-text">+=</span></a></li></ol></div>
             
 
           </div>
