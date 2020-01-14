@@ -107,7 +107,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/12/09/nYvfOVBeXDFplbo.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/09/vcot3DaqTHmB5G1.png">
 <meta property="og:image" content="https://i.loli.net/2019/12/09/ehOZHV2vo3PBnbE.png">
-<meta property="og:updated_time" content="2019-12-28T07:48:26.338Z">
+<meta property="og:updated_time" content="2020-01-14T05:58:51.585Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot 1.开篇">
 <meta name="twitter:description" content="结合springboot-guide对原来仓促学习SpringBoot重新学习和补充 热部署Maven配置热部署可以自动一段时间内对更改进行更新 不用手动 123456&amp;lt;!--             热部署--&amp;gt;        &amp;lt;dependency&amp;gt;            &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/group">
@@ -438,7 +438,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-12-28 15:48:26" itemprop="dateModified" datetime="2019-12-28T15:48:26+08:00">2019-12-28</time>
+                <time title="修改时间：2020-01-14 13:58:51" itemprop="dateModified" datetime="2020-01-14T13:58:51+08:00">2020-01-14</time>
               
             
           </span>
@@ -528,7 +528,7 @@
 <p>我们还需要一个控制器对书架上进行添加、查找以及查看。为此，我们需要新建一个 BookController</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> it.test.springboot_helloworld.domain.Book;</span><br><span class="line"><span class="keyword">import</span> org.springframework.http.ResponseEntity;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.*;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.stream.Collectors;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"api"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BookController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//    创建一个书架</span></span><br><span class="line">    <span class="keyword">private</span> List&lt;Book&gt; books  = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 添加一本书</span></span><br><span class="line"><span class="comment">     * localhost/api/book</span></span><br><span class="line"><span class="comment">     * &#123;"name":"book3","description":"book3描述"&#125;</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> book</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@PostMapping</span>(<span class="string">"book"</span>)</span><br><span class="line">     <span class="keyword">public</span> ResponseEntity&lt;List&lt;Book&gt;&gt; addBook(<span class="meta">@RequestBody</span> Book book)&#123;</span><br><span class="line">         books.add(book);</span><br><span class="line">      <span class="keyword">return</span> ResponseEntity.ok(books);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 删除一本书</span></span><br><span class="line"><span class="comment">     * localhost/api/book/0</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> id</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@DeleteMapping</span>(<span class="string">"book/&#123;id&#125;"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ResponseEntity <span class="title">deleteBook</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> <span class="keyword">int</span> id)</span>&#123;</span><br><span class="line">         books.remove(id);</span><br><span class="line">         <span class="keyword">return</span> ResponseEntity.ok(books);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     *  通过名字查询书</span></span><br><span class="line"><span class="comment">     *  localhost/api/book?name=book1</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> name</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"book"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ResponseEntity <span class="title">getBookByName</span><span class="params">(@RequestParam(<span class="string">"name"</span>)</span>String name)</span>&#123;</span><br><span class="line">        List&lt;Book&gt; results = books.stream().filter(book -&gt; book.getName().equals(name)).collect(Collectors.toList());</span><br><span class="line">        <span class="keyword">return</span> ResponseEntity.ok(results);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><font color="orange"><code>@RestController</code> </font>将返回的对象数据直接以 JSON 或 XML 形式写入 HTTP 响应(Response)中。绝大部分情况下都是直接以 JSON 形式返回给客户端，很少的情况下才会以 XML 形式返回。转换成 XML 形式还需要额为的工作，上面代码中演示的直接就是将对象数据直接以 JSON 形式写入 HTTP 响应(Response)中。关于<font color="orange"><code>@Controller</code></font>和<font color="orange"><code>@RestController</code></font> 的对比，我会在下一篇文章中单独介绍到（<font color="orange"><code>@Controller</code></font> +<font color="orange"><code>@ResponseBody</code></font>= <font color="orange"><code>@RestController</code></font>）。<br><font color="orange"><code>@RequestMapping</code></font> :上面的示例中没有指定 GET 与 PUT、POST 等，因为<font color="orange"><code>@RequestMapping</code></font>默认映射所有HTTP Action，你可以使用<font color="orange"><code>@RequestMapping(method=ActionType)</code></font>来缩小这个映射。<br><font color="orange"><code>@PostMapping</code></font>实际上就等价于<font color="orange"> <code>@RequestMapping(method = RequestMethod.POST)</code></font>，同样的<font color="orange"> <code>@DeleteMapping</code> </font>,<font color="orange"><code>@GetMapping</code></font>也都一样，常用的 HTTP Action 都有一个这种形式的注解所对应。<br><font color="orange"><code>@PathVariable</code> </font> :取url地址中的参数。<font color="orange"><code>@RequestParam</code>  </font>url的查询参数值。<br><font color="orange"><code>@RequestBody</code> </font>:可以将 HttpRequest body 中的 JSON 类型数据反序列化为合适的 Java 类型。<br><font color="orange"><code>ResponseEntity</code> </font>: 表示整个HTTP Response：状态码，标头和正文内容。我们可以使用它来自定义HTTP Response 的内容。</p>
+<p><font color="orange"><code>@RestController</code> </font>将返回的对象数据直接以 JSON 或 XML 形式写入 HTTP 响应(Response)中。绝大部分情况下都是直接以 JSON 形式返回给客户端，很少的情况下才会以 XML 形式返回。转换成 XML 形式还需要额为的工作，上面代码中演示的直接就是将对象数据直接以 JSON 形式写入 HTTP 响应(Response)中<br><font color="orange"><code>@RequestMapping</code></font> :上面的示例中没有指定 GET 与 PUT、POST 等，因为<font color="orange"><code>@RequestMapping</code></font>默认映射所有HTTP Action，你可以使用<font color="orange"><code>@RequestMapping(method=ActionType)</code></font>来缩小这个映射。<br><font color="orange"><code>@PostMapping</code></font>实际上就等价于<font color="orange"> <code>@RequestMapping(method = RequestMethod.POST)</code></font>，同样的<font color="orange"> <code>@DeleteMapping</code> </font>,<font color="orange"><code>@GetMapping</code></font>也都一样，常用的 HTTP Action 都有一个这种形式的注解所对应。<br><font color="orange"><code>@PathVariable</code> </font> :取url地址中的参数。<font color="orange"><code>@RequestParam</code>  </font>url的查询参数值。<br><font color="orange"><code>@RequestBody</code> </font>:可以将 HttpRequest body 中的 JSON 类型数据反序列化为合适的 Java 类型。<br><font color="orange"><code>ResponseEntity</code> </font>: 表示整个HTTP Response：状态码，标头和正文内容。我们可以使用它来自定义HTTP Response 的内容。<br><font color="orange"><code>@RequestParam</code> </font> 获取简单的参数 如int id</p>
 
       
     </div>
@@ -574,6 +574,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/01/10/《深入浅出Spring-Boot》-笔记1/" rel="prev" title="《深入浅出Spring Boot》 笔记1">
+                《深入浅出Spring Boot》 笔记1 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -648,7 +652,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">55</span>
+                    <span class="site-state-item-count">57</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -664,6 +668,8 @@
                     
                   
                     
+                    
+                      
                     
                       
                     
@@ -868,7 +874,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
